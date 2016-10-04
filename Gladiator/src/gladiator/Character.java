@@ -5,13 +5,15 @@
  */
 package gladiator;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Anthony
  */
 public class Character implements Serializable {
     public Character(){ }
-    public string getName() {return _name; }
-    private string _name;
+    public String getName() {return _name; }
+    private String _name;
     
 }
