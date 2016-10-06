@@ -5,6 +5,8 @@
  */
 package teamproject1;
 
+import unique.Player;
+
 /**
  *
  * @author Anthony
@@ -16,6 +18,13 @@ public class TeamProject1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Player playerOne = new Player();
+        
+        playerOne.setName("Fred Flinstone");
+        playerOne.setBestTime(7.00);
+        
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
     }
     
 }
