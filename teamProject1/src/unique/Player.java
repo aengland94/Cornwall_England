@@ -47,10 +47,7 @@ public class Player implements Serializable{
         if (Double.doubleToLongBits(this._bestTime) != Double.doubleToLongBits(other._bestTime)) {
             return false;
         }
-        if (!Objects.equals(this._name, other._name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this._name, other._name);
     }
 
     @Override
