@@ -7,6 +7,10 @@ package gladiator;
 
 import byui.cit260.gladiator.model.Player;
 import byui.cit260.gladiator.model.Character;
+import byui.cit260.gladiator.model.Fight;
+import byui.cit260.gladiator.model.Item;
+import byui.cit260.gladiator.model.Armour;
+import byui.cit260.gladiator.model.Weapon;
 /**
  *
  * @author Anthony
@@ -28,7 +32,10 @@ public class Gladiator {
         
         
         Character characterOne = new Character();
-        System.out.println(playerInfo);
+        Fight fightEq = new Fight();
+        Item itemOne = new Item();
+        Armour armourOne = new Armour();
+        Weapon weaponOne = new Weapon();
     }
     
 }
