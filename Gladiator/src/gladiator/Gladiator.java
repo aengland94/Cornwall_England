@@ -6,7 +6,7 @@
 package gladiator;
 
 import byui.cit260.gladiator.model.Player;
-
+import byui.cit260.gladiator.model.Character;
 /**
  *
  * @author Anthony
@@ -24,6 +24,10 @@ public class Gladiator {
         playerOne.setBestTime(7.00);
         
         String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+        
+        
+        Character characterOne = new Character();
         System.out.println(playerInfo);
     }
     
