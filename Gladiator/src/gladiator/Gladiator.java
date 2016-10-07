@@ -11,6 +11,9 @@ import byui.cit260.gladiator.model.Fight;
 import byui.cit260.gladiator.model.Item;
 import byui.cit260.gladiator.model.Armour;
 import byui.cit260.gladiator.model.Weapon;
+import byui.cit260.gladiator.model.Map;
+import byui.cit260.gladiator.model.Game;
+import byui.cit260.gladiator.model.Room;
 /**
  *
  * @author Anthony
@@ -36,6 +39,12 @@ public class Gladiator {
         Item itemOne = new Item();
         Armour armourOne = new Armour();
         Weapon weaponOne = new Weapon();
+        
+        Game gameOne = new Game();
+        
+        Map mapOne = new Map();
+        
+        Room roomOne = new Room();
     }
     
 }
