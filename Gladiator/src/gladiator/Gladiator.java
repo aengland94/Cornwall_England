@@ -34,17 +34,38 @@ public class Gladiator {
         System.out.println(playerInfo);
         
         
-        Character characterOne = new Character();
+        
         Fight fightEq = new Fight();
         Item itemOne = new Item();
         Armour armourOne = new Armour();
         Weapon weaponOne = new Weapon();
         
+        
+        
+        Character characterOne = new Character();
+        characterOne.setAlive(true);
+        characterOne.setAttack(3);
+        characterOne.setDefence(1);
+        characterOne.setHealth(10);
+        characterOne.setX(3);
+        characterOne.setY(1);
+        
         Game gameOne = new Game();
         
         Map mapOne = new Map();
+        mapOne.setFloor(1);
+        mapOne.setRoom(1);
+        String mapInfo = mapOne.toString();
+        System.out.println(mapInfo);
         
         Room roomOne = new Room();
+        roomOne.setDescription("a room with a fountain in the center");
+        roomOne.setItem(true);
+        roomOne.setPerson(false);
+        roomOne.setX(4);
+        roomOne.setY(1);
+        String roomInfo = roomOne.toString();
+        System.out.println(roomInfo);
     }
     
 }

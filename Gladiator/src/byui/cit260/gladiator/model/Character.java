@@ -5,15 +5,103 @@
  */
 package byui.cit260.gladiator.model;
 
+
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Objects;
 
 /**
  *
  * @author Anthony
  */
 public class Character implements Serializable {
-    public Character(){ }
-    public String getName() {return _name; }
     private String _name;
+    private int _health;
+    private Item[] bag;
+    private int _defence;
+    private int _attack;
+    private int _x;
+    private int _y;
+    private boolean _alive;
+    
+    public Character(){ }
+    
+    public String getName() {return _name; }
+    public int getHealth() { return _health; }
+    public void setHealth(int health) { _health = health; }
+    public Item[] getBag() { return bag; }
+    public void setBag(Item[] bag) { this.bag = bag; }
+    public int getDefence() { return _defence; }
+    public void setDefence(int defence) { _defence = defence; }
+    public int getAttack() { return _attack; }
+    public void setAttack(int attack) { _attack = attack; }
+    public int getX() { return _x; }
+    public void setX(int x) { _x = x; }
+    public int getY() { return _y; }
+    public void setY(int y) { _y = y; }
+
+    /**
+     *
+     * @return
+     */
+    public boolean isAlive() { return _alive; }
+    public void setAlive(boolean alive) { _alive = alive;}
+
+    @Override
+    public String toString() {
+        return "Character{" + "_name=" + _name + ", _health=" + _health + ", bag=" + Arrays.toString(bag) + ", _defence=" + _defence + ", _attack=" + _attack + ", _x=" + _x + ", _y=" + _y + ", _alive=" + _alive + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this._name);
+        hash = 47 * hash + this._health;
+        hash = 47 * hash + Arrays.deepHashCode(this.bag);
+        hash = 47 * hash + this._defence;
+        hash = 47 * hash + this._attack;
+        hash = 47 * hash + this._x;
+        hash = 47 * hash + this._y;
+        hash = 47 * hash + (this._alive ? 1 : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Character other = (Character) obj;
+        if (this._health != other._health) {
+            return false;
+        }
+        if (this._defence != other._defence) {
+            return false;
+        }
+        if (this._attack != other._attack) {
+            return false;
+        }
+        if (this._x != other._x) {
+            return false;
+        }
+        if (this._y != other._y) {
+            return false;
+        }
+        if (this._alive != other._alive) {
+            return false;
+        }
+        if (!Objects.equals(this._name, other._name)) {
+            return false;
+        }
+        return Arrays.deepEquals(this.bag, other.bag);
+    }
+    
+    
     
 }
