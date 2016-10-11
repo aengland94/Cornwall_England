@@ -24,13 +24,23 @@ public class Character implements Serializable {
     private int _y;
     private boolean _alive;
     
-    public Character(){ }
+    public Character(){ bag = new Item[3]; }
     
     public String getName() {return _name; }
     public int getHealth() { return _health; }
     public void setHealth(int health) { _health = health; }
     public Item[] getBag() { return bag; }
-    public void setBag(Item[] bag) { this.bag = bag; }
+    
+    public void setBag(Item newItem) {
+        int i = bag.length;
+        if (i < 4){
+            bag[i - 1] = newItem;}
+            //System.out.println(bag.length);}
+            //System.out.println(bag[0].getName());}
+        else{
+            System.out.println("Sorry, your bag is full.\n"
+                    + " Try dropping something first!");}}
+    
     public int getDefence() { return _defence; }
     public void setDefence(int defence) { _defence = defence; }
     public int getAttack() { return _attack; }
@@ -49,7 +59,25 @@ public class Character implements Serializable {
 
     @Override
     public String toString() {
-        return "Character{" + "_name=" + _name + ", _health=" + _health + ", bag=" + Arrays.toString(bag) + ", _defence=" + _defence + ", _attack=" + _attack + ", _x=" + _x + ", _y=" + _y + ", _alive=" + _alive + '}';
+        String item1 = "EMPTY";
+        String item2 = "EMPTY";
+        String item3 = "EMPTY";
+        
+        for(int i=0; i>bag.length; i++){ 
+            if(i < 1){
+                //System.out.println('A');
+                item1 = bag[i].getName();}
+            else if(i == 1){
+                //System.out.println('B');
+                item2 = bag[i].getName();}
+            else{
+                //System.out.println('C');
+                item3 = bag[i].getName();}}
+            
+        
+        return "Character{" + "_name=" + _name + ", _health=" + _health 
+                + ", bag=(" + item1 + ", " + item2 + ", " + item3 + ")" 
+                + ", _defence=" + _defence + ", _attack=" + _attack + ", _x=" + _x + ", _y=" + _y + ", _alive=" + _alive + '}';
     }
 
     @Override

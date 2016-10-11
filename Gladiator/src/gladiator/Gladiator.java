@@ -12,13 +12,21 @@ import byui.cit260.gladiator.model.Item;
 import byui.cit260.gladiator.model.Armour;
 import byui.cit260.gladiator.model.Weapon;
 import byui.cit260.gladiator.model.Map;
-import byui.cit260.gladiator.model.Game;
 import byui.cit260.gladiator.model.Room;
 /**
  *
  * @author Anthony
  */
 public class Gladiator {
+    
+    private Room[][] floorsAndRooms;
+    private boolean newFloor = false;
+    
+    private Room createRoom() { 
+        Room newRoom = new Room();
+        return newRoom;}
+    
+    private void uiCommands() { }
 
     /**
      * @param args the command line arguments
@@ -36,8 +44,15 @@ public class Gladiator {
         
         
         Fight fightEq = new Fight();
+        
+        
         Item itemOne = new Item();
+        itemOne.setName("key");
+        
+        
         Armour armourOne = new Armour();
+        
+        
         Weapon weaponOne = new Weapon();
         
         
@@ -49,8 +64,10 @@ public class Gladiator {
         characterOne.setHealth(10);
         characterOne.setX(3);
         characterOne.setY(1);
+        characterOne.setBag(itemOne);
+        String characterInfo = characterOne.toString();
+        System.out.println(characterInfo);
         
-        Game gameOne = new Game();
         
         Map mapOne = new Map();
         mapOne.setFloor(1);
