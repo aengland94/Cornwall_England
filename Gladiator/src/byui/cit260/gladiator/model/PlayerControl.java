@@ -10,6 +10,6 @@ package byui.cit260.gladiator.model;
  * @author Camdey
  */
 public class PlayerControl {
-    public int go() { return ; }
-    public 
+    private int x;
+    public int go() { return x; }
 }
