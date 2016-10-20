@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.model;
 
+
 /**
  *
  * @author Camdey
