@@ -5,10 +5,12 @@
  */
 package byui.cit260.gladiator.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Camdey
  */
-public class Weapon {
+public class Weapon extends Item implements Serializable{
     
 }

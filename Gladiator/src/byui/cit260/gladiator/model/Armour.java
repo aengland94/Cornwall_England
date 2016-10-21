@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 package byui.cit260.gladiator.model;
+
+import java.io.Serializable;
+
 /**
  *
  * @author Camdey
  */
-public class Armour {
+public class Armour extends Item implements Serializable{
     
 }

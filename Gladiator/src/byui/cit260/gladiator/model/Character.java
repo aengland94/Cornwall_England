@@ -15,18 +15,19 @@ import java.util.Objects;
  * @author Anthony
  */
 public class Character implements Serializable {
-    private String _name;
-    private int _health;
-    private Item[] bag;
-    private int _defence;
-    private int _attack;
-    private int _x;
-    private int _y;
-    private boolean _alive;
+    protected String _name;
+    protected int _health;
+    protected Item[] bag;
+    protected int _defence;
+    protected int _attack;
+    protected int _x;
+    protected int _y;
+    protected boolean _alive;
     
     public Character(){ bag = new Item[3]; }
     
     public String getName() {return _name; }
+    public void setName(String name) { _name = name; }
     public int getHealth() { return _health; }
     public void setHealth(int health) { _health = health; }
     public Item[] getBag() { return bag; }

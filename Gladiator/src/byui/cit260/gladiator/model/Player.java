@@ -12,23 +12,23 @@ import java.util.Objects;
  *
  * @author Anthony
  */
-public class Player implements Serializable{
-    private String _name;
+public class Player extends Character implements Serializable{
+    private int _maxHealth;
     private double _bestTime;
 
     public Player() {
     }
     
-    public String getName() { return _name;}
-    public void setName(String name) {_name = name; }
+    public int getMaxHealth() { return _maxHealth; }
+    public void setMaxHealth(int maxHealth) { _maxHealth = maxHealth; }
     public double getBestTime() { return _bestTime; }
     public void setBestTime(double bestTime) { _bestTime = bestTime; }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this._name);
-        hash = 41 * hash + (int) (Double.doubleToLongBits(this._bestTime) ^ (Double.doubleToLongBits(this._bestTime) >>> 32));
+        hash = 97 * hash + this._maxHealth;
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this._bestTime) ^ (Double.doubleToLongBits(this._bestTime) >>> 32));
         return hash;
     }
 
@@ -44,15 +44,20 @@ public class Player implements Serializable{
             return false;
         }
         final Player other = (Player) obj;
+        if (this._maxHealth != other._maxHealth) {
+            return false;
+        }
         if (Double.doubleToLongBits(this._bestTime) != Double.doubleToLongBits(other._bestTime)) {
             return false;
         }
-        return Objects.equals(this._name, other._name);
+        return true;
     }
 
     @Override
     public String toString() {
-        return "Player{" + "_name=" + _name + ", _bestTime=" + _bestTime + '}';
+        return "Player{" + "_name=" + _name +", _maxHealth=" + _maxHealth + ", _bestTime=" + _bestTime + '}';
     }
+
+    
     
 }

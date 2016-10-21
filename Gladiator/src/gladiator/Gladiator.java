@@ -83,6 +83,8 @@ public class Gladiator {
         roomOne.setY(1);
         String roomInfo = roomOne.toString();
         System.out.println(roomInfo);
+        
+        
     }
     
 }
