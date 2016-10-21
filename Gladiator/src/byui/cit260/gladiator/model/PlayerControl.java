@@ -5,13 +5,11 @@
  */
 package byui.cit260.gladiator.model;
 
-
 /**
  *
  * @author Camdey
  */
-public class Fight {
-    private int _fighteq;
-    public int getFighteq(){ return _fighteq; }
-    public void setFighteq(int fighteq) { _fighteq = fighteq; } 
+public class PlayerControl {
+    private int x;
+    public int go() { return x; }
 }

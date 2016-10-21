@@ -7,7 +7,7 @@ package gladiator;
 
 import byui.cit260.gladiator.model.Player;
 import byui.cit260.gladiator.model.Character;
-import byui.cit260.gladiator.model.Fight;
+import byui.cit260.gladiator.model.PlayerControl;
 import byui.cit260.gladiator.model.Item;
 import byui.cit260.gladiator.model.Armour;
 import byui.cit260.gladiator.model.Weapon;
@@ -43,7 +43,7 @@ public class Gladiator {
         
         
         
-        Fight fightEq = new Fight();
+        PlayerControl fightEq = new PlayerControl();
         
         
         Item itemOne = new Item();
