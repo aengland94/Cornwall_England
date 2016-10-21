@@ -22,7 +22,10 @@ public class Weapon extends Item implements Serializable{
     
     
         public static int randInt(int min, int max) {
-
+            
+	if (min > max) {
+		throw new IllegalArgumentException("max must be greater than min");
+	}
         
         Random r = new Random();
 
