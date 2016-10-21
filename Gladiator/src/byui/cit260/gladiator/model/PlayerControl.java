@@ -27,7 +27,23 @@ public class PlayerControl {
         return x; }
     
     public int fight(int attackerStats, int weapon, int defenderStats, int armour) { 
-        int lostHealth = defenderStats + armour - attackerStats + weapon;
+        if(attackerStats < 1){
+            System.out.println("Error! Attacker Stats are too low");
+            return 0;
+        }
+        if(weapon < 0){
+            System.out.println("Error! Weapon cannot be negative");
+            return 0;
+        }
+        if(defenderStats < 0){
+            System.out.println("Error! Defender Stats cannot be negative");
+            return 0;
+        }
+        if(armour < 0){
+            System.out.println("Error! Armour cannot be negative");
+            return 0;
+        }
+        int lostHealth = (defenderStats + armour) - (attackerStats + weapon);
         if(lostHealth < 0){
             lostHealth = -1;}
         else{
@@ -37,25 +53,44 @@ public class PlayerControl {
     public int heal(Player player, Item fountain){ 
         if (fountain.getModifier() <= 0) {
             System.out.println(fountain.getName() + " is empty and cannot heal you");
+            fountain.setModifier(0);
             return 0;}
+        if (fountain.getModifier() > 6){
+            fountain.setModifier(6);
+        }
         if(player.getHealth() >= player.getMaxHealth()) {
-            System.out.println("Your health is full!");
+            System.out.println("Your health was already full!");
             player.setHealth(player.getMaxHealth());
             return fountain.getModifier();}
-        
-        int neededHealth = player.getMaxHealth() - player.getHealth();
-        int remain = 0;
-        
-        if(neededHealth % (player.getY() + 1) != 0) { 
-            remain = 1;
+        if (player.getHealth() <= 0) {
+            System.out.println(player.getName() + " is dead");
+            return fountain.getModifier();
+        }
+        if (player.getMaxHealth() <= 0) {
+            System.out.println("Max Health is too low");
+            return fountain.getModifier();
+        }
+        if (player.getY() < 0) {
+            System.out.println("Y cannot be negative");
+            return fountain.getModifier();
         }
         
-        int power = fountain.getModifier() - neededHealth / (player.getY() + 1) - remain; 
+        int neededHealth = player.getMaxHealth() - player.getHealth();
         
-        if (power < 0) {
-            power = 0;
-            neededHealth = neededHealth -  fountain.getModifier() * (player.getY() + 1);
+        int power = fountain.getModifier() + (player.getY() * 4) - neededHealth; 
+        
+        if (power < 0) {            
+            neededHealth = neededHealth -  fountain.getModifier() + (player.getY() * 4);
             player.setHealth(player.getMaxHealth() - neededHealth);
+        }
+        else{
+            player.setHealth(player.getMaxHealth());
+        }
+        
+        power -= player.getY() * 4;
+        
+        if (power < 0){
+            power = 0;
         }
         return power; }
 }
