@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.model;
 
+import byui.cit260.gladiator.control.PlayerControl;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
