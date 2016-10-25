@@ -8,12 +8,13 @@ package byui.cit260.gladiator.control;
 import byui.cit260.gladiator.model.Item;
 import byui.cit260.gladiator.model.Map;
 import byui.cit260.gladiator.model.Player;
+import java.io.Serializable;
 
 /**
  *
  * @author Camdey
  */
-public class PlayerControl {
+public class PlayerControl implements Serializable{
     private int x;
     public int go(int move, Player player, Map map) { 
         if(move == 1){

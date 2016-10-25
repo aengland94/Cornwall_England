@@ -5,11 +5,13 @@
  */
 package byui.cit260.gladiator.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Camdey
  */
-public class Item {
+public class Item implements Serializable{
     protected String _name;
     protected int _modifier;
     

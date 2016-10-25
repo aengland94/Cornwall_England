@@ -10,17 +10,25 @@ import byui.cit260.gladiator.model.Character;
 import byui.cit260.gladiator.control.PlayerControl;
 import byui.cit260.gladiator.model.Item;
 import byui.cit260.gladiator.model.Armour;
+import byui.cit260.gladiator.model.Game;
 import byui.cit260.gladiator.model.Weapon;
 import byui.cit260.gladiator.model.Map;
 import byui.cit260.gladiator.model.Room;
+import byui.cit260.gladiator.view.StartProgramView;
 /**
  *
  * @author Anthony
  */
 public class Gladiator {
+    private static Game _currentGame = null;
+    private static Player _player = null;
+    private Room[][] floorsAndRooms = null;
+    private boolean _newFloor = false;
     
-    private Room[][] floorsAndRooms;
-    private boolean newFloor = false;
+    public static Game getCurrentGame() { return _currentGame; }
+    public static Player getPlayer() { return _player; }
+    public static void setCurrentGame(Game currentGame) { _currentGame = currentGame; }
+    public static void setPlayer (Player player) { _player = player; }
     
     private Room createRoom() { 
         Room newRoom = new Room();
@@ -32,59 +40,8 @@ public class Gladiator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        Player playerOne = new Player();
-        
-        playerOne.setName("Fred Flinstone");
-        playerOne.setBestTime(7.00);
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
-        
-        
-        
-        PlayerControl fightEq = new PlayerControl();
-        
-        
-        Item itemOne = new Item();
-        itemOne.setName("key");
-        
-        
-        Armour armourOne = new Armour();
-        
-        
-        Weapon weaponOne = new Weapon();
-        
-        
-        
-        Character characterOne = new Character();
-        characterOne.setAlive(true);
-        characterOne.setAttack(3);
-        characterOne.setDefence(1);
-        characterOne.setHealth(10);
-        characterOne.setX(3);
-        characterOne.setY(1);
-        characterOne.setBag(itemOne);
-        String characterInfo = characterOne.toString();
-        System.out.println(characterInfo);
-        
-        
-        Map mapOne = new Map();
-        mapOne.setFloor(1);
-        mapOne.setRoom(1);
-        String mapInfo = mapOne.toString();
-        System.out.println(mapInfo);
-        
-        Room roomOne = new Room();
-        roomOne.setDescription("a room with a fountain in the center");
-        roomOne.setItem(true);
-        roomOne.setPerson(false);
-        roomOne.setX(4);
-        roomOne.setY(1);
-        String roomInfo = roomOne.toString();
-        System.out.println(roomInfo);
-        
-        
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.displayStartProgramView();
     }
     
 }
