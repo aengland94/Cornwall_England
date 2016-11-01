@@ -27,4 +27,7 @@ public class GameControl implements Serializable{
         
         return player;
     }
+    public static void createNewGame(Player player){
+        System.out.println("\n*** createNewGame stub function called ***");
+    }
 }
