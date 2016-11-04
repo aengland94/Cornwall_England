@@ -19,13 +19,19 @@ public class Room implements Serializable{
     private int _y;
     private boolean _person;
     private boolean _item;
+    private Character _character;
     
     public Room() {
         _person = false;
         _item = false;
         _description = "This room is rather boring and has nothing of interest.";
     }
-    
+    public Character getCharacter() {
+        return _character;
+    }
+    public void setCharacter(Character character) {
+        _character = character;
+    }
     public String getDescription() { return _description; }
     public void setDescription(String description) { _description = description; }
     public int getX() { return _x; }

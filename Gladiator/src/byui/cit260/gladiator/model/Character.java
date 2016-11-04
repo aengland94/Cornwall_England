@@ -16,6 +16,7 @@ import java.util.Objects;
  */
 public class Character implements Serializable {
     protected String _name;
+    protected String _type;
     protected int _health;
     protected Item[] bag;
     protected int _defence;
@@ -24,9 +25,14 @@ public class Character implements Serializable {
     protected int _y;
     protected boolean _alive;
     
-    public Character(){ bag = new Item[3]; }
+    public Character(){ 
+        bag = new Item[3];
+        _name = "Joe";
+        _type = "servant";
+    }
     
     public String getName() {return _name; }
+    public String getType() {return _type; }
     public void setName(String name) { _name = name; }
     public int getHealth() { return _health; }
     public void setHealth(int health) { _health = health; }
