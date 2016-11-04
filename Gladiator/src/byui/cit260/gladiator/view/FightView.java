@@ -22,8 +22,8 @@ public class FightView {
     }
     private boolean doAction(String fght) {
         Room room = Game.getCurrentRoom();
-        if(room.isPerson() && fght == room.getCharacter().getName()
-                || fght == room.getCharacter().getType()){
+        if(room.isPerson() && fght.equals(room.getCharacter().getName())
+                || fght.equals(room.getCharacter().getType())){
             displayFight();
         }
         else {
