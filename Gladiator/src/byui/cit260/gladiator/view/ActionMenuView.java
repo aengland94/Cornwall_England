@@ -12,6 +12,12 @@ package byui.cit260.gladiator.view;
 public class ActionMenuView extends MenuView{
     public ActionMenuView() { 
         type = "ACTION";
+        command1 = "LOOK - (discribes the room you are in)";
+        command2 = "TALK - (starts conversation with someone)";
+        command3 = "FIGHT - (starts a battle)";
+        command4 = "GET - (puts item in your inventory)";
+        command5 = "GO - (moves you to another room)";
+        command6 = "HELP - (displays the Help Menu)";
     }
 
     /**
@@ -24,18 +30,48 @@ public class ActionMenuView extends MenuView{
         choice = choice.toUpperCase();
         
         switch (choice){
-            case "NEW":
+            case "LOOK":
+                displayLook();
                 break;
-            case "LOAD":
+            case "TALK":
+                displayTalk();
+                break;
+            case "FIGHT":
+                displayFight();
+                break;
+            case "GET":
+                displayGet();
+                break;
+            case "GO":
+                displayGo();
                 break;
             case "HELP":
-                break;
-            case "SAVE":
+                displayHelp();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
         return false;
+    }
+    
+    private void displayLook() {
+        System.out.println("\n*** displayLook() has been called ***");
+    }
+    private void displayTalk() {
+        System.out.println("\n*** displayTalk() has been called ***");
+    }
+    private void displayFight() {
+        System.out.println("\n*** displayFight() has been called ***");
+    }
+    private void displayGet() {
+        System.out.println("\n*** displayGet() has been called ***");
+    }
+    private void displayGo() {
+        System.out.println("\n*** displayGo() has been called ***");
+    }
+    private void displayHelp() {
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
     }
     
 }
