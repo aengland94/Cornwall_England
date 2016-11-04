@@ -9,9 +9,9 @@ package byui.cit260.gladiator.view;
  *
  * @author Anthony
  */
-public class GameMenuView extends MenuView{
-    public GameMenuView() { 
-        type = "GAME";
+public class ActionMenuView extends MenuView{
+    public ActionMenuView() { 
+        type = "ACTION";
     }
 
     /**

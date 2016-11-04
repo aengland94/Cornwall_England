@@ -7,15 +7,28 @@ package byui.cit260.gladiator.view;
 
 import byui.cit260.gladiator.control.GameControl;
 import gladiator.Gladiator;
+import java.util.Scanner;
 
 /**
  *
  * @author Anthony
  */
-public class MainMenuView {
-    public MainMenuView() { }
-    public void display() { }
-    private boolean doAction(String choice) {
+public class MainMenuView extends MenuView{
+    public MainMenuView() {
+        type = "MAIN";
+        command1 = "\n \tNEW - (starts a new game)";
+        command2 = "\n \tLOAD - (loads an existing game)";
+        command3 = "\n \tHELP - (displays the help menu)";
+        command4 = "\n \tSAVE - (saves the current game)";
+    }
+
+    /**
+     *
+     * @param choice
+     * @return
+     */
+    @Override
+    protected boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice){
@@ -47,7 +60,7 @@ public class MainMenuView {
     }
     private void displayHelpMenu() {
         System.out.println("*** displayHelpMenu() function called ***");
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.display();
     }
-    
-    String choice;
 }

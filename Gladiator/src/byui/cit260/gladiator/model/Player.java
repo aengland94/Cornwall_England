@@ -17,12 +17,23 @@ public class Player extends Character implements Serializable{
     private double _bestTime;
 
     public Player() {
+        _x = 1;
+        _y = 1;
+        _maxHealth = 5;
+        _health = 5;
     }
     
     public int getMaxHealth() { return _maxHealth; }
     public void setMaxHealth(int maxHealth) { _maxHealth = maxHealth; }
     public double getBestTime() { return _bestTime; }
     public void setBestTime(double bestTime) { _bestTime = bestTime; }
+    
+    public void displayStats(){
+        System.out.println("\nYou are " + _name
+                         + "\nYour Health is " + _health 
+                         + " and Max Health is " + _maxHealth
+                         + "\nYou are in room " + _x + " of floor " + _y);
+    }
 
     @Override
     public int hashCode() {
