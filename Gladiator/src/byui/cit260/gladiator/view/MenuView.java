@@ -18,6 +18,8 @@ abstract class MenuView {
         command2 = " ";
         command3 = " ";
         command4 = " ";
+        command5 = " ";
+        command6 = " ";
     }
     protected String getChoice() {
         Scanner keyboard = new Scanner(System.in);
@@ -45,7 +47,7 @@ abstract class MenuView {
                          + "\n*                                                       *"
                          + "\n* Please type one of the following capitalized commands *"
                          + "\n*     ============================================      *"
-                         + "\n" + command1 + command2 + command3 + command4
+                         + "\n" + command1 + command2 + command3 + command4 + command5 + command6
                          + "\n"
                          + "\n=========================================================");
     }
@@ -69,4 +71,6 @@ abstract class MenuView {
     protected String command2;
     protected String command3;
     protected String command4;
+    protected String command5;
+    protected String command6;
 }
