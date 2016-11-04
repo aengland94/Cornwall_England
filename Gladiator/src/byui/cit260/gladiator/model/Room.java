@@ -20,7 +20,11 @@ public class Room implements Serializable{
     private boolean _person;
     private boolean _item;
     
-    public Room() { }
+    public Room() {
+        _person = false;
+        _item = false;
+        _description = "This room is rather boring and has nothing of interest.";
+    }
     
     public String getDescription() { return _description; }
     public void setDescription(String description) { _description = description; }

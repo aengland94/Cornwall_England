@@ -12,5 +12,19 @@ import java.io.Serializable;
  * @author Anthony
  */
 public class Game implements Serializable{
-    public Game() {}
+    public Game() {
+        currentRoom = createRoom();
+    }
+    private Room createRoom() { 
+        Room newRoom = new Room();
+        return newRoom;}
+    public Room getCurrentRoom() {
+        return currentRoom;
+    }
+    public void setCurrentRoom(Room room){
+        currentRoom = room;
+    }
+    private Room[][] floorsAndRooms = null;
+    private boolean _newFloor = false;
+    private Room currentRoom;
 }
