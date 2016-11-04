@@ -18,13 +18,13 @@ public class Game implements Serializable{
     private Room createRoom() { 
         Room newRoom = new Room();
         return newRoom;}
-    public Room getCurrentRoom() {
+    public static Room getCurrentRoom() {
         return currentRoom;
     }
-    public void setCurrentRoom(Room room){
+    public static void setCurrentRoom(Room room){
         currentRoom = room;
     }
     private Room[][] floorsAndRooms = null;
     private boolean _newFloor = false;
-    private Room currentRoom;
+    private static Room currentRoom;
 }
