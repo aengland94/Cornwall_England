@@ -12,12 +12,12 @@ package byui.cit260.gladiator.view;
 public class ActionMenuView extends MenuView{
     public ActionMenuView() { 
         type = "ACTION";
-        command1 = "LOOK - (discribes the room you are in)";
-        command2 = "TALK - (starts conversation with someone)";
-        command3 = "FIGHT - (starts a battle)";
-        command4 = "GET - (puts item in your inventory)";
-        command5 = "GO - (moves you to another room)";
-        command6 = "HELP - (displays the Help Menu)";
+        command1 = "\n \tLOOK - (discribes the room you are in)";
+        command2 = "\n \tTALK - (starts conversation with someone)";
+        command3 = "\n \tFIGHT - (starts a battle)";
+        command4 = "\n \tGET - (puts item in your inventory)";
+        command5 = "\n \tGO - (moves you to another room)";
+        command6 = "\n \tHELP - (displays the Help Menu)";
     }
 
     /**
