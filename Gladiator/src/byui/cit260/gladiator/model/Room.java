@@ -22,7 +22,7 @@ public class Room implements Serializable{
     private Character _character;
     
     public Room() {
-        _person = false;
+        _person = true;
         _item = false;
         _description = "This room is rather boring and has nothing of interest.";
     }

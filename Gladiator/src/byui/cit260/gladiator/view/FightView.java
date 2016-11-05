@@ -28,8 +28,15 @@ public class FightView {
             return true;
         }
         if(room.isPerson()){
+        if(room.getCharacter() == null){
+            System.out.println("\n*** ERROR ** Character is null ***");
+        }
+        else if(fght.equals(room.getCharacter().getName())){
             displayFight();
         }
+        else {
+            System.out.println("\n" + fght + " is not in the room.");
+        }}
         else {
             System.out.println("\nThere is nothing here to fight.");
         }

@@ -27,7 +27,7 @@ public class Character implements Serializable {
     
     public Character(){ 
         bag = new Item[3];
-        _name = "Joe";
+        _name = "JOE";
         _type = "servant";
     }
     
