@@ -22,12 +22,16 @@ import byui.cit260.gladiator.view.StartProgramView;
 public class Gladiator {
     private static Game _currentGame = null;
     private static Player _player = null;
-    
+    private static Room _currentRoom = null;
     
     public static Game getCurrentGame() { return _currentGame; }
     public static Player getPlayer() { return _player; }
+    public static Room getCurrentRoom() { return _currentRoom; }
     public static void setCurrentGame(Game currentGame) { _currentGame = currentGame; }
     public static void setPlayer (Player player) { _player = player; }
+    public static void setCurrentRoom(Room currentRoom) { _currentRoom = currentRoom; }
+
+ 
     
     
     

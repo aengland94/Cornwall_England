@@ -13,18 +13,7 @@ import java.io.Serializable;
  */
 public class Game implements Serializable{
     public Game() {
-        currentRoom = createRoom();
+        
     }
-    private Room createRoom() { 
-        Room newRoom = new Room();
-        return newRoom;}
-    public static Room getCurrentRoom() {
-        return currentRoom;
-    }
-    public static void setCurrentRoom(Room room){
-        currentRoom = room;
-    }
-    private Room[][] floorsAndRooms = null;
-    private boolean _newFloor = false;
-    private static Room currentRoom;
+    
 }

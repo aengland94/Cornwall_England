@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.view;
 
+import byui.cit260.gladiator.control.GameControl;
 import byui.cit260.gladiator.model.Game;
 import byui.cit260.gladiator.model.Room;
 import java.util.Scanner;
@@ -21,13 +22,16 @@ public class FightView {
         System.out.println("\n*** Displays the Fight ***");
     }
     private boolean doAction(String fght) {
-        Room room = Game.getCurrentRoom();
-        if(room.isPerson() && fght == room.getCharacter().getName()
-                || fght == room.getCharacter().getType()){
+        Room room = GameControl.createRoom();
+        if(room == null){
+            System.out.println("\n*** ERROR ** Room is null ***");
+            return true;
+        }
+        if(room.isPerson()){
             displayFight();
         }
         else {
-            System.out.println("\nYou can't fight that.");
+            System.out.println("\nThere is nothing here to fight.");
         }
         return false;
     }
