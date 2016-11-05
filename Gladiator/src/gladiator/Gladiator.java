@@ -6,13 +6,7 @@
 package gladiator;
 
 import byui.cit260.gladiator.model.Player;
-import byui.cit260.gladiator.model.Character;
-import byui.cit260.gladiator.control.PlayerControl;
-import byui.cit260.gladiator.model.Item;
-import byui.cit260.gladiator.model.Armour;
 import byui.cit260.gladiator.model.Game;
-import byui.cit260.gladiator.model.Weapon;
-import byui.cit260.gladiator.model.Map;
 import byui.cit260.gladiator.model.Room;
 import byui.cit260.gladiator.view.StartProgramView;
 /**

@@ -14,18 +14,36 @@ import java.util.Objects;
  */
 public class Room implements Serializable{
 
-    private String _description;
-    private int _x;
-    private int _y;
-    private boolean _person;
-    private boolean _item;
-    private Character _character;
+    protected String _description;
+    protected int _x;
+    protected int _y;
+    protected boolean _person;
+    protected boolean _item;
+    protected Character _character = null;
+    protected Armour _armour;
+    protected Item _special;
+    protected Weapon _weapon;
+    protected String _type;
+    
     
     public Room() {
         _person = true;
         _item = false;
         _description = "This room is rather boring and has nothing of interest.";
+        if(_person){
+            _character = new Character();
+        }
     }
+    public void setWeapon(Weapon weapon) { _weapon = weapon; }
+    public void setArmour(Armour armour) { _armour = armour; }
+    public void setItem(Item item) { _special = item; }
+    protected void createWeapon() {  _weapon = new Weapon(); }
+    protected void createArmour() { _armour = new Armour(); }
+    protected void createItem() { _special = new Item(); }
+    public Weapon getWeapon() { return _weapon; }
+    public Armour getArmour() { return _armour; }
+    public Item getItem() { return _special; }
+    
     public Character getCharacter() {
         return _character;
     }

@@ -7,7 +7,6 @@ package byui.cit260.gladiator.model;
 
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -18,36 +17,29 @@ public class Character implements Serializable {
     protected String _name;
     protected String _type;
     protected int _health;
-    protected Item[] bag;
+    protected int _constitution;
     protected int _defence;
+    protected Armour _armour;
+    protected int _strength;
     protected int _attack;
+    protected Weapon _weapon;
+    protected Item _item;
     protected int _x;
     protected int _y;
     protected boolean _alive;
+    protected String _discription;
     
-    public Character(){ 
-        bag = new Item[3];
+    public Character(){
         _name = "JOE";
         _type = "servant";
     }
     
+    public String getDiscription() { return _discription; }
     public String getName() {return _name; }
     public String getType() {return _type; }
     public void setName(String name) { _name = name; }
     public int getHealth() { return _health; }
     public void setHealth(int health) { _health = health; }
-    public Item[] getBag() { return bag; }
-    
-    public void setBag(Item newItem) {
-        int i = bag.length;
-        if (i < 4){
-            bag[i - 1] = newItem;}
-            //System.out.println(bag.length);}
-            //System.out.println(bag[0].getName());}
-        else{
-            System.out.println("Sorry, your bag is full.\n"
-                    + " Try dropping something first!");}}
-    
     public int getDefence() { return _defence; }
     public void setDefence(int defence) { _defence = defence; }
     public int getAttack() { return _attack; }
@@ -63,27 +55,17 @@ public class Character implements Serializable {
      */
     public boolean isAlive() { return _alive; }
     public void setAlive(boolean alive) { _alive = alive;}
+    
+    protected void createWeapon() {  _weapon = new Weapon(); }
+    protected void createArmour() { _armour = new Armour(); }
+    protected void createItem() { _item = new Item(); }
+    public Weapon getWeapon() { return _weapon; }
+    public Armour getArmour() { return _armour; }
+    public Item getItem() { return _item; }
 
     @Override
-    public String toString() {
-        String item1 = "EMPTY";
-        String item2 = "EMPTY";
-        String item3 = "EMPTY";
-        
-        for(int i=0; i>bag.length; i++){ 
-            if(i < 1){
-                //System.out.println('A');
-                item1 = bag[i].getName();}
-            else if(i == 1){
-                //System.out.println('B');
-                item2 = bag[i].getName();}
-            else{
-                //System.out.println('C');
-                item3 = bag[i].getName();}}
-            
-        
-        return "Character{" + "_name=" + _name + ", _health=" + _health 
-                + ", bag=(" + item1 + ", " + item2 + ", " + item3 + ")" 
+    public String toString() {             
+            return "Character{" + "_name=" + _name + ", _health=" + _health 
                 + ", _defence=" + _defence + ", _attack=" + _attack + ", _x=" + _x + ", _y=" + _y + ", _alive=" + _alive + '}';
     }
 
@@ -92,7 +74,6 @@ public class Character implements Serializable {
         int hash = 7;
         hash = 47 * hash + Objects.hashCode(this._name);
         hash = 47 * hash + this._health;
-        hash = 47 * hash + Arrays.deepHashCode(this.bag);
         hash = 47 * hash + this._defence;
         hash = 47 * hash + this._attack;
         hash = 47 * hash + this._x;
@@ -131,10 +112,7 @@ public class Character implements Serializable {
         if (this._alive != other._alive) {
             return false;
         }
-        if (!Objects.equals(this._name, other._name)) {
-            return false;
-        }
-        return Arrays.deepEquals(this.bag, other.bag);
+        return Objects.equals(this._name, other._name);
     }
     
     

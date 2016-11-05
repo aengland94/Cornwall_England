@@ -23,6 +23,10 @@ public class Player extends Character implements Serializable{
         _health = 5;
     }
     
+    public void setWeapon(Weapon weapon) { _weapon = weapon; }
+    public void setArmour(Armour armour) { _armour = armour; }
+    public void setItem(Item item) { _item = item; }
+    
     public int getMaxHealth() { return _maxHealth; }
     public void setMaxHealth(int maxHealth) { _maxHealth = maxHealth; }
     public double getBestTime() { return _bestTime; }

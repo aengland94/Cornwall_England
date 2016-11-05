@@ -8,6 +8,7 @@ package byui.cit260.gladiator.view;
 import byui.cit260.gladiator.control.GameControl;
 import byui.cit260.gladiator.model.Game;
 import byui.cit260.gladiator.model.Room;
+import gladiator.Gladiator;
 import java.util.Scanner;
 
 /**
@@ -34,13 +35,25 @@ public class FightView {
         else if(fght.equals(room.getCharacter().getName())){
             displayFight();
         }
+        else if (fght.equals(Gladiator.getPlayer().getName())){
+            System.out.println("\nAs you are walking, you trip over your feet."
+                             + "\nThis causes you to fly foreward and land on your face."
+                             + "\nYou stand up to find the only thing dammaged is your pride.");
+            return false;
+        }
         else {
-            System.out.println("\n" + fght + " is not in the room.");
+            System.out.println("\nYou run around the room looking for" + fght + "." 
+                             + "You can't find them in the room.");
+            return false;
         }}
         else {
-            System.out.println("\nThere is nothing here to fight.");
+            System.out.println("\nYou charge foreward ready for the fight with your fists clenched."
+                             + "\nYou can fill the adrenaline pumping through your vains as your " 
+                             + "\nknucles turn white. Your head pounds, and you start to break a " 
+                             + "sweat. Suddenly your body relaxes a bit as you realize you are the " 
+                             + "one in the room. You feel your face turn a bright red.");
         }
-        return false;
+        return true;
     }
     private String getChoice() {
         Scanner keyboard = new Scanner(System.in);
@@ -72,5 +85,6 @@ public class FightView {
 
             done = doAction(action);
         }while(!done);
+        return;
     }
 }
