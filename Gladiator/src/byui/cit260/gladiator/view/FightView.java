@@ -85,6 +85,6 @@ public class FightView {
 
             done = doAction(action);
         }while(!done);
-        return;
+        
     }
 }
