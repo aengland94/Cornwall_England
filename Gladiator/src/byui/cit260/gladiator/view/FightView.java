@@ -42,7 +42,7 @@ public class FightView {
             return false;
         }
         else {
-            System.out.println("\nYou run around the room looking for" + fght + "." 
+            System.out.println("\nYou run around the room looking for " + fght + "." 
                              + "You can't find them in the room.");
             return false;
         }}

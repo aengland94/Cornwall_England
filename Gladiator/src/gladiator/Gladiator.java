@@ -17,7 +17,10 @@ public class Gladiator {
     private static Game _currentGame = null;
     private static Player _player = null;
     private static Room _currentRoom = null;
+    private static int _currentFloor = 0;
     
+    public static int getCurrentFloor() { return _currentFloor; }
+    public static void setCurrentFloor(int currentFloor) { _currentFloor = currentFloor; }
     public static Game getCurrentGame() { return _currentGame; }
     public static Player getPlayer() { return _player; }
     public static Room getCurrentRoom() { return _currentRoom; }
