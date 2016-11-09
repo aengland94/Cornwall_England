@@ -13,5 +13,10 @@ import java.util.Random;
  * @author Camdey
  */
 public class Weapon extends Item implements Serializable{
+
+    static int randInt(int min, int max) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     public Weapon() { }
 }
