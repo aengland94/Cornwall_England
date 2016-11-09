@@ -14,20 +14,20 @@ import java.util.Objects;
  * @author Anthony
  */
 public class Character implements Serializable {
-    protected String _name;
-    protected String _type;
-    protected int _health;
-    protected int _constitution;
-    protected int _defence;
-    protected Armour _armour;
-    protected int _strength;
-    protected int _attack;
-    protected Weapon _weapon;
-    protected Item _item;
-    protected int _x;
-    protected int _y;
-    protected boolean _alive;
-    protected String _discription;
+    protected String _name = null;
+    protected String _type = null;
+    protected int _health = 1;
+    protected int _constitution = 1;
+    protected int _defence = 0;
+    protected Armour _armour = null;
+    protected int _strength = 1;
+    protected int _attack = 0;
+    protected Weapon _weapon = null;
+    protected Item _item = null;
+    protected int _x = 0;
+    protected int _y = 0;
+    protected boolean _alive = true;
+    protected String _discription = null;
     
     public Character(){
         _name = "JOE";

@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.model;
 
+import byui.cit260.gladiator.control.Control;
 import java.io.Serializable;
 
 /**
@@ -14,5 +15,18 @@ import java.io.Serializable;
 public class DiningRoom extends Room implements Serializable{
     public DiningRoom() {
         _type = "DINING ROOM";
+        
+        addPerson();
+        addItem();
+        addDescription();
+        addCharacter();
+    }
+    
+    @Override
+    protected void addDescription() {
+        _num = Control.randInt(1, _x);
+        if(!_person && !_item){
+            _description = "This room has a wooden table that is covered in moldy food.";
+        }
     }
 }

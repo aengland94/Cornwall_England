@@ -5,6 +5,8 @@
  */
 package byui.cit260.gladiator.model;
 
+import byui.cit260.gladiator.control.Control;
+import byui.cit260.gladiator.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -24,16 +26,55 @@ public class Room implements Serializable{
     protected Item _special;
     protected Weapon _weapon;
     protected String _type;
+    protected int _num;
     
     
     public Room() {
-        _person = true;
-        _item = false;
-        _description = "This room is rather boring and has nothing of interest.";
-        if(_person){
-            _character = new Character();
+        _type = "PLAIN ROOM";
+        addPerson();
+        addItem();
+        addDescription();
+        addCharacter();
+    }
+    
+    protected void addDescription() {
+        _num = Control.randInt(1, _x);
+        if(!_person && !_item){
+            _description = "This room is rather boring and has nothing of interest.";
         }
     }
+    
+    protected void addCharacter(){
+        if(_person){
+            _character = GameControl.createCharacter();
+        }
+    }
+    
+    protected void addPerson() {
+        _num = Control.randInt(1,2);
+        _person = _num != 1;
+    }
+    
+    protected void addItem() {
+        _num = Control.randInt(1,2);
+        _item = _num != 1;
+        
+        if(_item){
+            _num = Control.randInt(1,3);
+            
+            switch(_num){
+                case 1:
+                    _special = new Armour();
+                    break;
+                case 2:
+                    _special = new Weapon();
+                    break;
+                default:
+                    _special = new Item();
+            }
+        }
+    }
+    public String getType() { return _type; }
     public void setWeapon(Weapon weapon) { _weapon = weapon; }
     public void setArmour(Armour armour) { _armour = armour; }
     public void setItem(Item item) { _special = item; }
