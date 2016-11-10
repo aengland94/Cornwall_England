@@ -18,10 +18,10 @@ public class StartProgramView extends View implements Serializable {
     public StartProgramView() {
         super("WELCOME TO GLADIATOR!\n"
         + "This is a game where you will be fighting your way through\n"
-        + "a collecium to overthrow the current Ceaser of Rome to free\n"
+        + "a collecium to overthrow the current Caeser of Rome to free\n"
         + "yourself and your people from the bondage you are in as a\n"
         + "Roman Gladiator.\n\n"
-        + "You will start at the bottom of the collecium. You will have\n"
+        + "You will start at the bottom of the Coliseum. You will have\n"
         + "to search rooms, fight Bosses, and complete different objectives\n"
         + "each floor to be able to move onto the next floor. Each floor will\n"
         + "progressively get harder in diffuculty until you finally are able\n"
