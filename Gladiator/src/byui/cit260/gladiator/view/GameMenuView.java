@@ -11,7 +11,7 @@ package byui.cit260.gladiator.view;
  */
 public class GameMenuView extends MenuView{
     public GameMenuView() { 
-        type = "GAME";
+        super("", "", "");
     }
 
     /**

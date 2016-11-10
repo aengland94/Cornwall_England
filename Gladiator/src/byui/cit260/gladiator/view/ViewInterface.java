@@ -12,7 +12,5 @@ package byui.cit260.gladiator.view;
 public interface ViewInterface {
     
     public void display();
-    public String getInput();
-    public boolean doAction(String value);
     
 }

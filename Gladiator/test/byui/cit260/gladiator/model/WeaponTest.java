@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.model;
 
+import byui.cit260.gladiator.control.Control;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -26,7 +27,7 @@ public class WeaponTest {
         int min = 1;
         int max = 1;
         int expResult = 1;
-        int result = Weapon.randInt(min, max);
+        int result = Control.randInt(min, max);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("success!");
@@ -37,7 +38,7 @@ public class WeaponTest {
         int min = 0;
         int max = 6;
         int expResult = 0;
-        int result = Weapon.randInt(min, max);
+        int result = Control.randInt(min, max);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("Randomly Generated Zero");
@@ -48,7 +49,7 @@ public class WeaponTest {
         int min = 5;
         int max = 1;
         int expResult = 0;
-        int result = Weapon.randInt(min, max);
+        int result = Control.randInt(min, max);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("failed2");

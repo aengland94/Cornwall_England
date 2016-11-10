@@ -10,14 +10,11 @@ package byui.cit260.gladiator.view;
  * @author Anthony
  */
 public class ActionMenuView extends MenuView{
-    public ActionMenuView() { 
-        type = "ACTION";
-        command1 = "\n \tLOOK - (discribes the room you are in)";
-        command2 = "\n \tTALK - (starts conversation with someone)";
-        command3 = "\n \tFIGHT - (starts a battle)";
-        command4 = "\n \tGET - (puts item in your inventory)";
-        command5 = "\n \tGO - (moves you to another room)";
-        command6 = "\n \tHELP - (displays the Help Menu)";
+    public ActionMenuView() {
+        super("ACTION", "LOOK - (discribes the room you are in)", 
+                "TALK - (starts conversation with someone)",
+                "FIGHT - (starts a battle)", "GET - (puts item in your inventory)",
+                "GO - (moves you to another room)", "HELP - (displays the Help Menu)");
     }
 
     /**

@@ -14,14 +14,9 @@ import java.util.Scanner;
  *
  * @author Anthony
  */
-public class StartProgramView implements Serializable{
-    public StartProgramView() { 
-        promptMessage = "Welcome Warrior! What should we call you?";
-        
-        displayBanner();
-    }
-    private void displayBanner() {
-        System.out.println("WELCOME TO GLADIATOR!\n"
+public class StartProgramView extends View implements Serializable {
+    public StartProgramView() {
+        super("WELCOME TO GLADIATOR!\n"
         + "This is a game where you will be fighting your way through\n"
         + "a collecium to overthrow the current Ceaser of Rome to free\n"
         + "yourself and your people from the bondage you are in as a\n"
@@ -32,29 +27,12 @@ public class StartProgramView implements Serializable{
         + "progressively get harder in diffuculty until you finally are able\n"
         + "to reach the top. There you will be given the oppertunity to fight\n"
         + "Ceaser himself. Beating Ceaser will result in freedom for you and\n"
-        + "your people as well as the winning of the Game!\n");
+        + "your people as well as the winning of the Game!\n"
+        + "\nWelcome Warrior! What should we call you?");
     }
-    private String getPlayersName() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while(!valid){
-            System.out.println("\n" + promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if(value.length() < 1){
-                System.out.println("\nINVALID!!! Your name cannot be left blank!");
-            }
-            else{
-                valid = true;
-            }
-        }
-        return value;
-    }
-    private boolean doAction(String playersName){
+    
+    @Override
+    protected boolean doAction(String playersName){
         if(playersName.length() < 2){
             System.out.println("Invalid name: The name must be > 1 character");
             return false;
@@ -78,18 +56,4 @@ public class StartProgramView implements Serializable{
         
         mainMenuView.display();
     }
-    public void displayStartProgramView() {
-        System.out.println("\n*** displayStartProgram() called ***\n");
-        
-        boolean done = false;
-        do{
-            String name = getPlayersName(); 
-            if(name.toUpperCase().equals("Q")){
-                return;
-            }
-            done = doAction(name);
-        }while(!done);
-    }
-
-private String promptMessage;
 }

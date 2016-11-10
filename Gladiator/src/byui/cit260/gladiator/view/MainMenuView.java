@@ -15,11 +15,8 @@ import java.util.Scanner;
  */
 public class MainMenuView extends MenuView{
     public MainMenuView() {
-        type = "MAIN";
-        command1 = "\n \tNEW - (starts a new game)";
-        command2 = "\n \tLOAD - (loads an existing game)";
-        command3 = "\n \tHELP - (displays the help menu)";
-        command4 = "\n \tSAVE - (saves the current game)";
+        super("MAIN", "NEW - (starts a new game)", "LOAD - (loads an existing game)",
+                "SAVE - (saves the current game)", "HELP - (displays the help menu)");        
     }
 
     /**

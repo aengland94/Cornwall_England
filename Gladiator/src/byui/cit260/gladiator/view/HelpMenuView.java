@@ -13,12 +13,9 @@ import gladiator.Gladiator;
  * @author Anthony
  */
 public class HelpMenuView extends MenuView{
-    public HelpMenuView() { 
-        type = "HELP";
-        command1 = "\n \tMAIN - (displays the main menu)";
-        command2 = "\n \tACTION - (displays the action menu)";
-        command3 = "\n \tSTATS - (displays stats like health and room)";
-        command4 = "\n \tPLAY - (returns to the current game)";
+    public HelpMenuView() {
+        super("HELP", "MAIN - (displays the main menu)", "ACTION - (displays the action menu)",
+                "STATS - (displays stats like health and room)", "PLAY - (returns to the current game)");
     }
     @Override
     protected boolean doAction(String choice) {

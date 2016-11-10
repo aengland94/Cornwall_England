@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author Krissy
  */
 public abstract class View implements ViewInterface {
+    public View() { }
     
     protected String displayMessage;
     
@@ -19,11 +20,14 @@ public abstract class View implements ViewInterface {
         this.displayMessage = message;
     }
     
+    protected boolean doAction(String string){
+        return false;
+    }
+    
     @Override
     public void display() {
-        boolean done = false;
+        boolean done;
         do{
-            //prompt for and get players name
             String value = this.getInput();
             if (value.toUpperCase().equals("Q")) // user wants to quit
                 return; // exit the view
@@ -31,11 +35,11 @@ public abstract class View implements ViewInterface {
             //do the requested action and display the next view
             done = this.doAction(value);
             
-        } while (!done); //exit the view when done == true
+        } while (!done);
     }
     
-    @Override
-    public String getInput(){
+    
+    protected String getInput(){
         Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
@@ -51,10 +55,11 @@ public abstract class View implements ViewInterface {
             value = value.trim();
             
             if (value.length() < 1) { // blank value entered
-                System.out.println("\nYou must enter a value");
-                continue;
+                System.out.println("\n*** INVALID!!! ** Please enter a command! ***");
             }
-            break;
+            else{
+                valid = true;
+            }
         }
         return value; //return the name
     }
