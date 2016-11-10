@@ -7,7 +7,7 @@ package byui.cit260.gladiator.view;
 // not really sure what this view is suppose to do ~Krissy
 
 
-public class ViewAbstractImp extends ViewAbstract {
+public class ViewAbstractImp extends View {
 
     public ViewAbstractImp(String message) {
         super(message);

@@ -21,11 +21,19 @@ public class FightView {
     }
     private void displayFight() {
         System.out.println("\n*** Displays the Fight ***");
+        
+        nextView();
+    }
+    private void nextView(){
+        if(Gladiator.getCurrentRoom().getCharacter().isAlive()){
+            CharacterFightView fight = new CharacterFightView();
+            fight.display();
+        }
     }
     private boolean doAction(String fght) {
         Room room = GameControl.createRoom();
         if(room == null){
-            System.out.println("\n*** ERROR ** Room is null ***");
+            System.out.println("\n*** ERROR ** You must start a game to fight ***");
             return true;
         }
         if(room.isPerson()){

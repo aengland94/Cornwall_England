@@ -21,7 +21,7 @@ abstract class MenuView {
         command5 = " ";
         command6 = " ";
     }
-    protected String getChoice() {
+    protected String getInput() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -58,7 +58,7 @@ abstract class MenuView {
         boolean done = false;
         do{
             displayMenu();
-            String action = getChoice(); 
+            String action = getInput(); 
             if(action.toUpperCase().equals("Q")){
                 return;
             }

@@ -12,11 +12,23 @@ import java.io.Serializable;
  * @author Camdey
  */
 public class Item implements Serializable{
-    protected String _name;
-    protected int _modifier;
+    protected String _name = null;
+    protected int _modifier = 0;
+    protected String _description = null;
+    protected int _num = 0;
     
+    public Item() {
+        chooseName();
+    }
+    
+    public String getDescription() { return _description; }
+    public void setDescriptioin(String description) { _description = description; }
     public String getName() { return _name; }
     public void setName(String name) { _name = name; }
     public int getModifier() { return _modifier; }
     public void setModifier(int modifier) { _modifier = modifier; }
+    
+    protected void chooseName() {
+        _name = "KEY";
+    }
 }

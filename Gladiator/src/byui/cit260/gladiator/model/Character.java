@@ -27,14 +27,66 @@ public class Character implements Serializable {
     protected int _x = 0;
     protected int _y = 0;
     protected boolean _alive = true;
-    protected String _discription = null;
+    protected String _description = null;
+    protected int _num = 0;
     
     public Character(){
         _name = "JOE";
         _type = "servant";
     }
     
-    public String getDiscription() { return _discription; }
+    protected void addDecription() {
+        String p1 = "a " + _type + " named " + _name;
+        String p2 = "";
+        String p3 = "";
+        String p4 = "";
+        String p5 = "";
+        
+        if(_armour != null){
+            p2 = " wearing " + _armour.getDescription();
+        }
+        if(_weapon != null){
+            p3 = " holding " + _weapon.getDescription();
+        }
+        
+        if(_strength < 6){
+            p4 = "\nThey have almost no muscle ";
+        }
+        else if(_strength < 11){
+            p4 = "\nThey have some muscle but it isn't very toned ";
+        }
+        else{
+            p4 = "\nThey have very toned muscle ";
+        }
+        
+        if(_strength < 6){
+            p5 = "and are a twig ";
+        }
+        else if(_strength < 11){
+            p5 = "and are not anything special ";
+        }
+        else if(_strength < 16){
+            p5 = "and are very well built ";
+        }
+        else{
+            p5 = "and are jacked ";
+        }
+        
+        _description = p1 + p2 + p3 + p4 + p5;
+    }
+    
+    protected void addArmour() {
+        
+        _armour = new Armour();
+    }
+    
+    protected void addWeapon() {
+        _weapon = new Weapon();
+    }
+
+    
+    
+    public String getDescription() { return _description; }
     public String getName() {return _name; }
     public String getType() {return _type; }
     public void setName(String name) { _name = name; }

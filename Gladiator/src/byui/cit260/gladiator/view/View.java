@@ -11,11 +11,11 @@ import java.util.Scanner;
  *
  * @author Krissy
  */
-public abstract class ViewAbstract implements ViewInterface {
+public abstract class View implements ViewInterface {
     
     protected String displayMessage;
     
-    public ViewAbstract(String message) {
+    public View(String message) {
         this.displayMessage = message;
     }
     

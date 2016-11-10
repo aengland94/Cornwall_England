@@ -5,6 +5,8 @@
  */
 package byui.cit260.gladiator.model;
 
+import byui.cit260.gladiator.control.Control;
+import byui.cit260.gladiator.control.PlayerControl;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -21,6 +23,65 @@ public class Player extends Character implements Serializable{
         _y = 1;
         _maxHealth = 5;
         _health = 5;
+        
+        addArmour();
+        addWeapon();
+        addStrength();
+        addConst();
+        addHealth();
+        addDecription();
+    }
+    
+    @Override
+    protected void addDecription() {
+        String p1 = "You are a " + _type + " named " + _name;
+        String p2 = "";
+        String p3 = "";
+        String p4 = "";
+        String p5 = "ÆMILIUS";
+        
+        if(_armour != null){
+            p2 = " wearing " + _armour.getDescription();
+        }
+        if(_weapon != null){
+            p3 = " holding " + _weapon.getDescription();
+        }
+        
+        if(_strength < 6){
+            p4 = "\nYou have almost no muscle ";
+        }
+        else if(_strength < 11){
+            p4 = "\nYou have some muscle but it isn't very toned ";
+        }
+        else{
+            p4 = "\nYou have very toned muscle ";
+        }
+        
+        if(_strength < 6){
+            p5 = "and are a twig ";
+        }
+        else if(_strength < 11){
+            p5 = "and are not anything special ";
+        }
+        else if(_strength < 16){
+            p5 = "and are very well built ";
+        }
+        else{
+            p5 = "and are jacked ";
+        }
+        
+        _description = p1 + p2 + p3 + p4 + p5;
+    }
+    private void addHealth() {
+        _health = PlayerControl.health(5,5);
+    }
+    
+    private void addConst() {
+        _num = Control.randInt(1, 5);
+    }
+    
+    private void addStrength() {
+        _num = Control.randInt(1, 5);
     }
     
     public void setWeapon(Weapon weapon) { _weapon = weapon; }

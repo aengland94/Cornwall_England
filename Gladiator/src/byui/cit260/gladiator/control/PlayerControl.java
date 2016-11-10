@@ -14,7 +14,7 @@ import java.io.Serializable;
  *
  * @author Camdey
  */
-public class PlayerControl implements Serializable{
+public class PlayerControl extends CharacterControl implements Serializable{
     private int x;
     public int go(int move, Player player, Map map) { 
         if(move == 1){
@@ -31,29 +31,7 @@ public class PlayerControl implements Serializable{
         System.out.println("Invalid Move");}
         return x; }
     
-    public int fight(int attackerStats, int weapon, int defenderStats, int armour) { 
-        if(attackerStats < 1){
-            System.out.println("Error! Attacker Stats are too low");
-            return 0;
-        }
-        if(weapon < 0){
-            System.out.println("Error! Weapon cannot be negative");
-            return 0;
-        }
-        if(defenderStats < 0){
-            System.out.println("Error! Defender Stats cannot be negative");
-            return 0;
-        }
-        if(armour < 0){
-            System.out.println("Error! Armour cannot be negative");
-            return 0;
-        }
-        int lostHealth = (defenderStats + armour) - (attackerStats + weapon);
-        if(lostHealth < 0){
-            lostHealth = -1;}
-        else{
-            lostHealth = 0;}
-        return lostHealth; }
+    
     
     public int heal(Player player, Item fountain){ 
         if (fountain.getModifier() <= 0) {
