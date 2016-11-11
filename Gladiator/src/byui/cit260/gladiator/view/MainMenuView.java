@@ -7,7 +7,6 @@ package byui.cit260.gladiator.view;
 
 import byui.cit260.gladiator.control.GameControl;
 import gladiator.Gladiator;
-import java.util.Scanner;
 
 /**
  *

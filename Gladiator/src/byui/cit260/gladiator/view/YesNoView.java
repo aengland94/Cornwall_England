@@ -9,9 +9,9 @@ package byui.cit260.gladiator.view;
  *
  * @author Anthony
  */
-public class GameMenuView extends MenuView{
-    public GameMenuView() { 
-        super("", "", "");
+abstract class YesNoView extends View{
+    public YesNoView(String message) { 
+        super("\n" + message + "\nYES or NO?");
     }
 
     /**
@@ -24,13 +24,11 @@ public class GameMenuView extends MenuView{
         choice = choice.toUpperCase();
         
         switch (choice){
-            case "NEW":
+            case "YES":
+                yes();
                 break;
-            case "LOAD":
-                break;
-            case "HELP":
-                break;
-            case "SAVE":
+            case "NO":
+                no();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -38,4 +36,11 @@ public class GameMenuView extends MenuView{
         return false;
     }
     
+    protected void yes(){
+        
+    }
+    
+    protected void no() {
+        
+    }
 }

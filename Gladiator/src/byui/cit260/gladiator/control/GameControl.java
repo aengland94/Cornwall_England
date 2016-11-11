@@ -12,6 +12,7 @@ import byui.cit260.gladiator.model.Fountain;
 import byui.cit260.gladiator.model.Hallway;
 import byui.cit260.gladiator.model.Kitchen;
 import byui.cit260.gladiator.model.Character;
+import byui.cit260.gladiator.model.Game;
 import byui.cit260.gladiator.model.Player;
 import byui.cit260.gladiator.model.Room;
 import byui.cit260.gladiator.model.Servant;
@@ -26,6 +27,10 @@ import java.io.Serializable;
  * @author Anthony
  */
 public class GameControl implements Serializable{
+
+    private static void createFirstRoom() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public GameControl() { }
     
     private static Room[][] rAndF = new Room[9][5];
@@ -197,5 +202,10 @@ public class GameControl implements Serializable{
     
     public static void createNewGame(Player player){
         System.out.println("\n*** createNewGame stub function called ***");
+        Game newgame = new Game();
+        newgame.setPlayer(player);
+        newgame.setName(player.getName());
+        
+        createFirstRoom();
     }
 }

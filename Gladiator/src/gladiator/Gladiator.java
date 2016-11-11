@@ -14,11 +14,13 @@ import byui.cit260.gladiator.view.StartProgramView;
  * @author Anthony
  */
 public class Gladiator {
+    private static Game[] _games = new Game[3];
     private static Game _currentGame = null;
     private static Player _player = null;
     private static Room _currentRoom = null;
     private static int _currentFloor = 0;
     
+    public static Game[] getGames() { return _games; }
     public static int getCurrentFloor() { return _currentFloor; }
     public static void setCurrentFloor(int currentFloor) { _currentFloor = currentFloor; }
     public static Game getCurrentGame() { return _currentGame; }

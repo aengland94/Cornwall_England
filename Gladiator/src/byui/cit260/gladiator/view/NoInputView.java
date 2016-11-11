@@ -7,7 +7,7 @@ package byui.cit260.gladiator.view;
 // not really sure what this view is suppose to do ~Krissy
 
 
-public class NoInputView extends View {
+abstract class NoInputView extends View {
 
     public NoInputView(String message) {
         _message = message;
