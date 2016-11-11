@@ -9,10 +9,16 @@ package byui.cit260.gladiator.view;
  *
  * @author Anthony
  */
-public class CharacterFightView {
-    public CharacterFightView() { }
-    
-    public void display() {
-        
+public class CharacterFightView extends NoInputView {
+    public CharacterFightView() { 
+        super("\nThey decide to fight");
     }
+    
+    @Override
+    protected boolean doAction(String string) {
+        System.out.println(string);
+
+        return true;
+    }
+    
 }

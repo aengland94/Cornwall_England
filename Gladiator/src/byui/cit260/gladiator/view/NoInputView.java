@@ -10,18 +10,20 @@ package byui.cit260.gladiator.view;
 public class NoInputView extends View {
 
     public NoInputView(String message) {
+        _message = message;
     }
-
+private String _message;
     @Override
     public void display() {
         boolean done;
         do{
-            done = this.doAction();
+            done = this.doAction(_message);
             
         } while (!done);
     }
-    
-    protected boolean doAction() {
+    @Override
+    protected boolean doAction(String string) {
+        System.out.println(string);
         return false;
     }
     

@@ -6,31 +6,50 @@
 package byui.cit260.gladiator.view;
 
 import byui.cit260.gladiator.control.GameControl;
-import byui.cit260.gladiator.model.Game;
+import byui.cit260.gladiator.control.PlayerControl;
 import byui.cit260.gladiator.model.Room;
 import gladiator.Gladiator;
-import java.util.Scanner;
 
 /**
  *
  * @author Camdey
  */
-public class FightView {
+public class FightView extends NoInputView{
     public FightView() {
-       
+       super("\nYou decide to fight");
     }
     private void displayFight() {
-        System.out.println("\n*** Displays the Fight ***");
         
-        nextView();
+        int health;
+        int mod =  
+                PlayerControl.fight(Gladiator.getPlayer().getAttack(), 
+                Gladiator.getPlayer().getWeapon().getModifier(), 
+                Gladiator.getCurrentRoom().getCharacter().getDefence(), 
+                Gladiator.getCurrentRoom().getCharacter().getArmour().getModifier());
+        health = Gladiator.getCurrentRoom().getCharacter().getHealth() + mod;
+        Gladiator.getCurrentRoom().getCharacter().setHealth(health);
+        if(mod < 0){
+            System.out.println("\nYou hit!!!");
+        }
+        else{
+            System.out.println("\nYou missed");
+        }
+        nextView(health);
     }
-    private void nextView(){
-        if(Gladiator.getCurrentRoom().getCharacter().isAlive()){
+    private void nextView(int health){
+        if(health > 0){
             CharacterFightView fight = new CharacterFightView();
             fight.display();
         }
+        else{
+            Gladiator.getCurrentRoom().getCharacter().setAlive(false);
+            Gladiator.getCurrentRoom().setPerson(false);
+            System.out.println("\nYour hit killed them and their body slumps to the floor!");
+        }
     }
-    private boolean doAction(String fght) {
+    @Override
+    protected boolean doAction(String fght) {
+        System.out.println(fght);
         Room room = GameControl.createRoom();
         if(room == null){
             System.out.println("\n*** ERROR ** You must start a game to fight ***");
@@ -43,17 +62,7 @@ public class FightView {
         else if(fght.equals(room.getCharacter().getName())){
             displayFight();
         }
-        else if (fght.equals(Gladiator.getPlayer().getName())){
-            System.out.println("\nAs you are walking, you trip over your feet."
-                             + "\nThis causes you to fly foreward and land on your face."
-                             + "\nYou stand up to find the only thing dammaged is your pride.");
-            return false;
         }
-        else {
-            System.out.println("\nYou run around the room looking for " + fght + "." 
-                             + "You can't find them in the room.");
-            return false;
-        }}
         else {
             System.out.println("\nYou charge foreward ready for the fight with your fists clenched."
                              + "\nYou can fill the adrenaline pumping through your vains as your " 
@@ -63,36 +72,5 @@ public class FightView {
         }
         return true;
     }
-    private String getChoice() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while(!valid){
-            
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if(value.length() < 1){
-                System.out.println("\nINVALID!!! Please enter a command!");
-            }
-            else{
-                valid = true;
-            }
-        }
-        return value;
-    }
- public void display() {
-        boolean done = false;
-        do{
-            System.out.println("\nWhat are you fighting?");
-            String action = getChoice(); 
-            if(action.toUpperCase().equals("Q")){
-                return;
-            }
-
-            done = doAction(action);
-        }while(!done);
-        return;
-    }
+    
 }

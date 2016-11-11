@@ -20,7 +20,7 @@ public class CharacterControl {
         return health;
     }
     
-    public int fight(int attackerStats, int weapon, int defenderStats, int armour) { 
+    public static int fight(int attackerStats, int weapon, int defenderStats, int armour) { 
         if(attackerStats < 1){
             System.out.println("Error! Attacker Stats are too low");
             return 0;
