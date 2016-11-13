@@ -18,7 +18,7 @@ public class Weapon extends Item implements Serializable{
 
     @Override
     protected void chooseName() {
-        _num = Control.randInt(1, 20);
+        _num = Control.randInt(1, 30);
         
         switch(_num){
             case 1:

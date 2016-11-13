@@ -28,22 +28,33 @@ public class MainMenuView extends MenuView{
         choice = choice.toUpperCase();
         
         switch (choice){
+            case "N":
             case "NEW":
                 startNewGame();
                 break;
+            case "L":
             case "LOAD":
                 loadExistingGame();
                 break;
+            case "H":
             case "HELP":
                 displayHelpMenu();
                 break;
+            case "S":
             case "SAVE":
                 saveGame();
+                break;
+            case "X":
+                quitGame();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
         return false;
+    }
+    private void quitGame() {
+        SaveYNView check = new SaveYNView();
+        check.display();
     }
     private void startNewGame() {
         GameControl.createNewGame(Gladiator.getPlayer());
@@ -53,6 +64,8 @@ public class MainMenuView extends MenuView{
     }
     private void saveGame() {
         System.out.println("*** saveGame() function called ***");
+        SaveView save = new SaveView();
+        save.display();
     }
     private void displayHelpMenu() {
         System.out.println("*** displayHelpMenu() function called ***");

@@ -14,14 +14,14 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     public View() { }
     
-    protected String displayMessage;
+    protected String displayMessage = "*** Stub ***";
     
     public View(String message) {
         this.displayMessage = message;
     }
     
     protected boolean doAction(String string){
-        return false;
+        return true;
     }
     
     @Override

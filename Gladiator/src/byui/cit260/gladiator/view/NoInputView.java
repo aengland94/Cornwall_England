@@ -24,7 +24,7 @@ private String _message;
     @Override
     protected boolean doAction(String string) {
         System.out.println(string);
-        return false;
+        return true;
     }
     
 }

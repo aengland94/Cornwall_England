@@ -24,9 +24,11 @@ abstract class YesNoView extends View{
         choice = choice.toUpperCase();
         
         switch (choice){
+            case "Y":
             case "YES":
                 yes();
                 break;
+            case "N":
             case "NO":
                 no();
                 break;

@@ -29,7 +29,7 @@ import java.io.Serializable;
 public class GameControl implements Serializable{
 
     private static void createFirstRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     public GameControl() { }
     
@@ -201,11 +201,16 @@ public class GameControl implements Serializable{
     }
     
     public static void createNewGame(Player player){
-        System.out.println("\n*** createNewGame stub function called ***");
         Game newgame = new Game();
         newgame.setPlayer(player);
         newgame.setName(player.getName());
         
+        Gladiator.setCurrentGame(newgame);
+        
         createFirstRoom();
+    }
+    
+    public static void saveGame(int slot) {
+        System.out.println("\n*** saveGame stub function called ***");
     }
 }

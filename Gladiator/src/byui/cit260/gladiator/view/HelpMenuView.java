@@ -15,22 +15,31 @@ import gladiator.Gladiator;
 public class HelpMenuView extends MenuView{
     public HelpMenuView() {
         super("HELP", "MAIN - (displays the main menu)", "ACTION - (displays the action menu)",
-                "STATS - (displays stats like health and room)", "PLAY - (returns to the current game)");
+                "STATS - (displays stats like health and room)", "MAP - (displays the floors map)",
+                "PLAY - (returns to the current game)");
     }
     @Override
     protected boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice){
+            case "M":
             case "MAIN":
                 displayMain();
                 break;
+            case "A":
             case "ACTION":
                 displayAction();
                 break;
+            case "S":
             case "STATS":
                 displayStats();
                 break;
+            case "F":
+            case "MAP":
+                displayMap();
+                break;
+            case "P":
             case "PLAY":
                 displayPlay();
                 break;
@@ -38,6 +47,10 @@ public class HelpMenuView extends MenuView{
                 System.out.println("\n*** Invalid selection *** Try again");
         }
         return false;
+    }
+    private void displayMap() {
+        MapView map = new MapView();
+        map.display();
     }
     private void displayMain() {
         MainMenuView mainMenuView = new MainMenuView();
