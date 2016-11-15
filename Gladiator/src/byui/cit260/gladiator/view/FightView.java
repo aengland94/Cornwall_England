@@ -5,7 +5,6 @@
  */
 package byui.cit260.gladiator.view;
 
-import byui.cit260.gladiator.control.GameControl;
 import byui.cit260.gladiator.control.PlayerControl;
 import byui.cit260.gladiator.model.Room;
 import gladiator.Gladiator;
@@ -50,16 +49,20 @@ public class FightView extends NoInputView{
     @Override
     protected boolean doAction(String fght) {
         System.out.println(fght);
-        Room room = GameControl.createRoom();
+        Room room = Gladiator.getCurrentRoom();
         if(room == null){
             System.out.println("\n*** ERROR ** You must start a game to fight ***");
             return true;
         }
         if(room.isPerson()){
         if(room.getCharacter() == null){
-            System.out.println("\n*** ERROR ** Character is null ***");
+            System.out.println("\nYou charge foreward ready for the fight with your fists clenched."
+                             + "\nYou can fill the adrenaline pumping through your vains as your " 
+                             + "\nknucles turn white. Your head pounds, and you start to break a " 
+                             + "sweat. Suddenly your body relaxes a bit as you realize you are the " 
+                             + "one in the room. You feel your face turn a bright red.");
         }
-        else if(fght.equals(room.getCharacter().getName())){
+        else {
             displayFight();
         }
         }

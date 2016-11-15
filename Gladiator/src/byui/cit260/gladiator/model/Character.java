@@ -6,6 +6,7 @@
 package byui.cit260.gladiator.model;
 
 
+import gladiator.Gladiator;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -31,6 +32,8 @@ public class Character implements Serializable {
     protected int _num = 0;
     
     public Character(){
+        _x = Gladiator.getCurrentRoomNum();
+        _y = Gladiator.getCurrentFloor();
         _name = "JOE";
         _type = "servant";
     }

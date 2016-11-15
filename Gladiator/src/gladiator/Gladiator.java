@@ -18,9 +18,12 @@ public class Gladiator {
     private static Game _currentGame = null;
     private static Player _player = null;
     private static Room _currentRoom = null;
+    private static int _currentRoomNum = 0;
     private static int _currentFloor = 0;
     
     public static Game[] getGames() { return _games; }
+    public static int getCurrentRoomNum() { return _currentRoomNum; }
+    public static void setCurrentRoomNum(int num) { _currentRoomNum = num; }
     public static int getCurrentFloor() { return _currentFloor; }
     public static void setCurrentFloor(int currentFloor) { _currentFloor = currentFloor; }
     public static Game getCurrentGame() { return _currentGame; }
@@ -30,12 +33,7 @@ public class Gladiator {
     public static void setPlayer (Player player) { _player = player; }
     public static void setCurrentRoom(Room currentRoom) { _currentRoom = currentRoom; }
 
- 
-    
-    
-    
-    private void uiCommands() { }
-
+     
     /**
      * @param args the command line arguments
      */

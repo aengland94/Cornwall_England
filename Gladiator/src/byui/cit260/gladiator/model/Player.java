@@ -19,13 +19,8 @@ public class Player extends Character implements Serializable{
     private double _bestTime;
 
     public Player() {
-        _x = 1;
-        _y = 1;
         _maxHealth = 5;
-        _health = 5;
         
-        addArmour();
-        addWeapon();
         addStrength();
         addConst();
         addHealth();
@@ -77,11 +72,11 @@ public class Player extends Character implements Serializable{
     }
     
     private void addConst() {
-        _num = Control.randInt(1, 5);
+        _num = Control.randInt(8, 16);
     }
     
     private void addStrength() {
-        _num = Control.randInt(1, 5);
+        _num = Control.randInt(6, 12);
     }
     
     public void setWeapon(Weapon weapon) { _weapon = weapon; }

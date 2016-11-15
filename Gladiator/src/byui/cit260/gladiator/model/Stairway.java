@@ -6,6 +6,7 @@
 package byui.cit260.gladiator.model;
 
 import byui.cit260.gladiator.control.Control;
+import gladiator.Gladiator;
 import java.io.Serializable;
 
 /**
@@ -14,6 +15,8 @@ import java.io.Serializable;
  */
 public class Stairway extends Room implements Serializable{
     public Stairway() {
+        _x = Gladiator.getCurrentRoomNum();
+        _y = Gladiator.getCurrentFloor();
         _type = "STAIRWAY";
         
         addPerson();
@@ -24,7 +27,7 @@ public class Stairway extends Room implements Serializable{
     
     @Override
     protected void addDescription() {
-        _num = Control.randInt(1, _x);
+        _num = Control.randInt(1, 2);
         if(!_person && !_item){
             _description = "This room seems rather small with a large door leading to the next floor.";
         }

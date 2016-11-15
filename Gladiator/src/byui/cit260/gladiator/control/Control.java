@@ -13,14 +13,18 @@ import java.util.Random;
  */
 public class Control {
      public static int randInt(int min, int max) {
-            
-	if (min > max) {
-		throw new IllegalArgumentException("max must be greater than min");
-	}
-        
         Random r = new Random();
-
-        int randomNum = r.nextInt((max - min) + 1) + min;
+        int randomNum;
+        
+	if (min > max) {
+            int newMin = max;
+            int newMax = min;
+            
+            randomNum = r.nextInt((newMax - newMin) + 1) + newMin;
+	}
+        else{
+          randomNum = r.nextInt((max - min) + 1) + min;  
+        }             
 
         return randomNum;
 }

@@ -7,6 +7,7 @@ package byui.cit260.gladiator.model;
 
 import byui.cit260.gladiator.control.Control;
 import byui.cit260.gladiator.control.GameControl;
+import gladiator.Gladiator;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,20 +17,22 @@ import java.util.Objects;
  */
 public class Room implements Serializable{
 
-    protected String _description;
-    protected int _x;
-    protected int _y;
-    protected boolean _person;
-    protected boolean _item;
+    protected String _description = null;
+    protected int _x = 0;
+    protected int _y = 0;
+    protected boolean _person = false;
+    protected boolean _item = false;
     protected Character _character = null;
-    protected Armour _armour;
-    protected Item _special;
-    protected Weapon _weapon;
-    protected String _type;
-    protected int _num;
+    protected Armour _armour = null;
+    protected Item _special = null;
+    protected Weapon _weapon = null;
+    protected String _type = null;
+    protected int _num = 0;
     
     
     public Room() {
+        _x = Gladiator.getCurrentRoomNum();
+        _y = Gladiator.getCurrentFloor();
         _type = "PLAIN ROOM";
         addPerson();
         addItem();
@@ -38,7 +41,7 @@ public class Room implements Serializable{
     }
     
     protected void addDescription() {
-        _num = Control.randInt(1, _x);
+        _num = Control.randInt(1, 2);
         if(!_person && !_item){
             _description = "This room is rather boring and has nothing of interest.";
         }
