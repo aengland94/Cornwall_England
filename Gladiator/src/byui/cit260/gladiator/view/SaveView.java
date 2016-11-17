@@ -13,4 +13,8 @@ public class SaveView extends View{
     public SaveView() {
         
     }
+    @Override
+        protected boolean doAction(String string){
+            return true;
+        }
 }

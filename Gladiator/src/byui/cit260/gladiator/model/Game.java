@@ -27,12 +27,12 @@ public class Game implements Serializable{
     public Room[][] getFandR() { return _fandR; }
     public void setFandR(Room[][] fandR) {
         for(int i = 0;i < fandR.length;i++){
-            System.arraycopy(fandR[i], 0, _fandR[i], 0, fandR.length);
+            System.arraycopy(fandR[i], 0, _fandR[i], 0, fandR[i].length);
         }
     }
     
     public void setFandR(Room[][] fandR, int floor) {
-        System.arraycopy(fandR[floor], 0, _fandR[floor], 0, fandR.length);
+        System.arraycopy(fandR[floor], 0, _fandR[floor], 0, fandR[floor].length);
     }
     
     public void setFandR(Room fandR){

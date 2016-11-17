@@ -5,34 +5,28 @@
  */
 package byui.cit260.gladiator.model;
 
-import byui.cit260.gladiator.control.CharacterControl;
-import byui.cit260.gladiator.control.Control;
-import java.io.Serializable;
-
 /**
  *
  * @author Anthony
  */
-public class Boss extends Character implements Serializable{
-    public Boss() {
-        _type = "boss";
-        addArmour();
-        addWeapon();
-        addStrength();
-        addConst();
-        addHealth();
-        addDecription();
-    }
+public enum Boss{
+    ANTON(1,"food",new Weapon("SWORD", 2), new Armour()),
+    BOB(2,"water",new Weapon("SWORD", 2), new Armour());
     
-    private void addHealth() {
-        _health = CharacterControl.health(6, 10);
-    }
+    private final int health;
+    private final String descrpition;
+    private final Weapon weapon;
+    private final Armour armour;
     
-    private void addConst() {
-        _num = Control.randInt(1, 5);
+    // overoaded constructor where you pass in the helth and descriptions. The 
+    // constructor then assigns the value passed in to the healt and description in this class
+    Boss(int health, String description, Weapon weapon, Armour armour){
+        this.health = health;
+        this.descrpition = description;
+        this.weapon = weapon;
+        this.armour = armour;
     }
+    // create getter function for each instance variable
     
-    private void addStrength() {
-        _num = Control.randInt(1, 5);
-    }
+
 }

@@ -11,6 +11,10 @@ package byui.cit260.gladiator.view;
  */
 public class MapView extends View{
     public MapView() {
-        
+    
+    }
+    @Override
+    protected boolean doAction(String string){
+        return true;
     }
 }

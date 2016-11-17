@@ -38,6 +38,10 @@ public class Character implements Serializable {
         _type = "servant";
     }
     
+    protected enum names{
+        
+    }
+    
     protected void addDecription() {
         String p1 = "a " + _type + " named " + _name;
         String p2 = "";

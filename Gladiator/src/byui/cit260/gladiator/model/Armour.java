@@ -18,6 +18,10 @@ public class Armour extends Item implements Serializable{
         chooseName();
         chooseModifier();
     }
+    public Armour(String name, int modifier){
+        _name = name;
+        _modifier = modifier;
+    }
     
     @Override
     protected void chooseName() {

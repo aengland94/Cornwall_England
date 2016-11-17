@@ -40,7 +40,8 @@ public class Room implements Serializable{
         addCharacter();
     }
     
-    protected void addDescription() {
+    
+    protected void addDescription() { 
         _num = Control.randInt(1, 2);
         if(!_person && !_item){
             _description = "This room is rather boring and has nothing of interest.";

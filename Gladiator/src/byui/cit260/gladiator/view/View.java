@@ -20,9 +20,7 @@ public abstract class View implements ViewInterface {
         this.displayMessage = message;
     }
     
-    protected boolean doAction(String string){
-        return true;
-    }
+    protected abstract boolean doAction(String string);
     
     @Override
     public void display() {
