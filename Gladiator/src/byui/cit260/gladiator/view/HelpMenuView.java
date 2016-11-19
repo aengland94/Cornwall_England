@@ -16,7 +16,7 @@ public class HelpMenuView extends MenuView{
     public HelpMenuView() {
         super("HELP", "MAIN - (displays the main menu)", "ACTION - (displays the action menu)",
                 "STATS - (displays stats like health and room)", "MAP - (displays the floors map)",
-                "PLAY - (returns to the current game)");
+                "ROOM - (displays the current room you are in)");
     }
     @Override
     protected boolean doAction(String choice) {
@@ -35,18 +35,25 @@ public class HelpMenuView extends MenuView{
             case "STATS":
                 displayStats();
                 break;
+            case "I":
+            case "INVETORY":
+                displayInventory();
+                break;
             case "F":
             case "MAP":
                 displayMap();
                 break;
-            case "P":
-            case "PLAY":
+            case "R":
+            case "ROOM":
                 displayPlay();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
         }
         return false;
+    }
+    private void displayInventory(){
+        Gladiator.getPlayer().getInventory();
     }
     private void displayMap() {
         MapView map = new MapView();
