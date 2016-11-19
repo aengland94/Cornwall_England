@@ -31,6 +31,8 @@ public class MainMenuView extends MenuView{
             case "N":
             case "NEW":
                 startNewGame();
+                NextRoomView room = new NextRoomView();
+                room.display();
                 break;
             case "L":
             case "LOAD":
