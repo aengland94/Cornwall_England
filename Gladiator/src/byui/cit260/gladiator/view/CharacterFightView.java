@@ -44,13 +44,15 @@ public class CharacterFightView extends NoInputView {
         else{
             System.out.println("\nThe last hit was too much for you to handle. "
                     + "\nYou die and your body slumps to the floor.");
+            KeepPlayingYNView play = new KeepPlayingYNView();
+            play.display();
         }
     }
     
     @Override
     protected boolean doAction(String string) {
         System.out.println(string);
-
+        displayFight();
         return true;
     }
     

@@ -5,7 +5,6 @@
  */
 package byui.cit260.gladiator.control;
 
-import byui.cit260.gladiator.model.Boss;
 import byui.cit260.gladiator.model.BossRoom;
 import byui.cit260.gladiator.model.DiningRoom;
 import byui.cit260.gladiator.model.Fountain;
@@ -28,17 +27,19 @@ import java.io.Serializable;
  */
 public class GameControl implements Serializable{
 
-    private static void createFirstRoom() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    public GameControl() { }
     
-    private static Room[][] rAndF = new Room[9][5];
-    private static boolean boss = false;
-    private static boolean stair = false;
-    private static boolean fount = false;
-    private static String type = null;
-    private static int num = 0;
+    public GameControl() {
+        
+    }
+    
+    private static void createFirstRoom() {
+        Room room = new Room();
+        
+        room.setDescription("\n*** PUT FIRST ROOM DESCRIPTION HERE ***");
+        
+        Gladiator.setCurrentRoom(room);
+        Gladiator.getCurrentGame().setFandR(room);
+    }
     
     public static Player createPlayer(String name) {
         if(name == null){
@@ -55,22 +56,23 @@ public class GameControl implements Serializable{
     
     public static Room createRoom(){
         Room room = new Room();
-        num =Control.randInt(1, 4);
-        boolean done = false;
+        int num =Control.randInt(1, 4);
+        int done;
         
         do{
-            setType();
-            done = checkRoom();
-        }while(!done);
+            String type = setType(num);
+            done = checkRoom(type);
+        }while(done < 0);
         
-        chooseRoom(room);
-        resetVar();
+        chooseRoom(room, num);
         Gladiator.setCurrentRoom(room);
+        Gladiator.getCurrentGame().setFandR(room);
         
         return room;
     }
     
-    private static void setType(){
+    private static String setType(int num){
+        String type = null;
         switch (num) {
             case 2:
                 type = "BOSS ROOM";
@@ -85,9 +87,10 @@ public class GameControl implements Serializable{
                 type = "OTHER";
                 break;
         }
+        return type;
     }
     
-    private static void chooseRoom(Room room){
+    private static void chooseRoom(Room room, int num){
         switch(num){
             case 1:
                 num = Control.randInt(1, 6);
@@ -128,25 +131,27 @@ public class GameControl implements Serializable{
         }
     }
     
-    private static void resetVar() {
-        boss = false;
-        stair = false;
-        fount = false;
-        type = null;
-    }
     
-    private static boolean checkRoom() {
+    
+    private static int checkRoom(String type) {
+        boolean boss = false;
+        boolean stair = false;
+        boolean fount = false;
+        int num = 0;
+        
+        Room[] rAndF = Gladiator.getCurrentGame().getFandR()[Gladiator.getCurrentFloor()];
+        
         for(int i = 0; i < rAndF.length; i++){
-            if(type == rAndF[Gladiator.getCurrentFloor()][i].getType()){
-                return false;
+            if(type == rAndF[i].getType()){
+                return -1;
             }
-            if("BOSS ROOM" == rAndF[Gladiator.getCurrentFloor()][i].getType()){
+            if("BOSS ROOM" == rAndF[i].getType()){
                 boss = true;
             }
-            if("STAIRWAY" == rAndF[Gladiator.getCurrentFloor()][i].getType()){
+            if("STAIRWAY" == rAndF[i].getType()){
                 stair = true;
             }
-            if("FOUNTAIN" == rAndF[Gladiator.getCurrentFloor()][i].getType()){
+            if("FOUNTAIN" == rAndF[i].getType()){
                 fount = true;
             }
         }
@@ -178,14 +183,15 @@ public class GameControl implements Serializable{
                     }
                     break;
                 default:
+                    return -1;
             }
         }
-        return true;
+        return num;
     }
     
     public static Character createCharacter(){
         Character character;
-        num = Control.randInt(1, 3);
+        int num = Control.randInt(1, 3);
         
         switch(num){
             case 1:
@@ -201,11 +207,16 @@ public class GameControl implements Serializable{
     }
     
     public static void createNewGame(Player player){
-        System.out.println("\n*** createNewGame stub function called ***");
         Game newgame = new Game();
         newgame.setPlayer(player);
         newgame.setName(player.getName());
         
+        Gladiator.setCurrentGame(newgame);
+        
         createFirstRoom();
+    }
+    
+    public static void saveGame(int slot) {
+        System.out.println("\n*** saveGame stub function called ***");
     }
 }

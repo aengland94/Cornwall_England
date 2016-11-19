@@ -27,21 +27,27 @@ public class ActionMenuView extends MenuView{
         choice = choice.toUpperCase();
         
         switch (choice){
+            case "L":
             case "LOOK":
                 displayLook();
                 break;
+            case "T":
             case "TALK":
                 displayTalk();
                 break;
+            case "F":
             case "FIGHT":
                 displayFight();
                 break;
+            case "G":
             case "GET":
                 displayGet();
                 break;
+            case "O":
             case "GO":
                 displayGo();
                 break;
+            case "H":
             case "HELP":
                 displayHelp();
                 break;

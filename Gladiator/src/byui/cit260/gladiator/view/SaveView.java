@@ -7,15 +7,14 @@ package byui.cit260.gladiator.view;
 
 /**
  *
- * @author Krissy
+ * @author Anthony
  */
-public class NextRoomView extends View{ //extends View
-    public NextRoomView(){
+public class SaveView extends View{
+    public SaveView() {
         
     }
     @Override
-    protected boolean doAction(String string){
-        return true;
-    }
-//description of the room.    
+        protected boolean doAction(String string){
+            return true;
+        }
 }

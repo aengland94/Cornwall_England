@@ -8,7 +8,6 @@ package byui.cit260.gladiator.model;
 import byui.cit260.gladiator.control.Control;
 import byui.cit260.gladiator.control.PlayerControl;
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  *
@@ -17,19 +16,21 @@ import java.util.Objects;
 public class Player extends Character implements Serializable{
     private int _maxHealth;
     private double _bestTime;
+    private String[][] inventory = {{"WEAPON","[EMPTY]"},{"ARMOUR","[EMPTY]"},
+                                    {"KEY","[EMPTY]"}};
 
     public Player() {
-        _x = 1;
-        _y = 1;
         _maxHealth = 5;
-        _health = 5;
         
-        addArmour();
-        addWeapon();
         addStrength();
         addConst();
         addHealth();
         addDecription();
+    }
+    
+    public String[][] getInventory(){ return inventory; }
+    public void setInventory(int num, String name){
+        inventory[num][1] = name;
     }
     
     @Override
@@ -77,11 +78,11 @@ public class Player extends Character implements Serializable{
     }
     
     private void addConst() {
-        _num = Control.randInt(1, 5);
+        _num = Control.randInt(8, 16);
     }
     
     private void addStrength() {
-        _num = Control.randInt(1, 5);
+        _num = Control.randInt(6, 12);
     }
     
     public void setWeapon(Weapon weapon) { _weapon = weapon; }
