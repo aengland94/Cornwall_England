@@ -11,7 +11,11 @@ package byui.cit260.gladiator.view;
  */
 public class MapView extends NoInputView{
     public MapView() {
-    super("*** DISPLAY MAP ***");
+    super("/n        [ ]" 
+        + "/n [ ]" 
+        + "/n       [ ]   [ ]"
+        + "/n [ ]"
+        + "/n         [ ]");
     }
     
     @Override
