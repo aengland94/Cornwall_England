@@ -28,5 +28,8 @@ public class BossRoom extends Room implements Serializable{
         if(!_person && !_item){
             _description = "This room seems rather small with a large door leading to a back portion.";
         }
+        else if (_person){
+            _description = "You have found the boss for this floor! As you enter, the door locks behind you. Do you fight? YES or NO?";
+        }
     }
 }

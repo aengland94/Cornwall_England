@@ -26,7 +26,7 @@ public class Fountain extends Room implements Serializable{
     protected void addDescription() {
         _num = Control.randInt(1, 2);
         
-            _description = "This room is dark with a glowing fountain in the center.";
+            _description = "This room is dark with a glowing fountain in the center. If you use the fountain, your health fills is fully restored.";
         
     }
 }
