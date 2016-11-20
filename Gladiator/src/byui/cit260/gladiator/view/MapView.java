@@ -19,7 +19,7 @@ public class MapView extends NoInputView{
         + "\n"
         + "\n*************************"
         + "\n* X = You  ? = Unknown  *"
-        + "\n************************");
+        + "\n*************************");
     }
     
     @Override
