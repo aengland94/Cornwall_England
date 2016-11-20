@@ -30,7 +30,7 @@ public class Item implements Serializable{
     public void setModifier(int modifier) { _modifier = modifier; }
     
     protected void chooseName() {
-        _name = "KEY";
+        _name = "FLOOR-KEY";
     }
     protected void addDescription() {
         _description = " + _modifier" + " " + _name;
