@@ -14,7 +14,8 @@ import gladiator.Gladiator;
  */
 public class HelpMenuView extends MenuView{
     public HelpMenuView() {
-        super("HELP", "MAIN - (displays the main menu)", "ACTION - (displays the action menu)",
+        super("HELP", "MAIN - (displays the main menu)", "ACTION - (displays the action menu)", 
+                "INVENTORY - (displays your inventory)",
                 "STATS - (displays stats like health and room)", "MAP - (displays the floors map)",
                 "ROOM - (displays the current room you are in)");
     }
