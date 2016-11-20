@@ -53,9 +53,10 @@ public class Room implements Serializable{
         else if (_person){
             _description = "There is a person in this room, other than that; it's pretty boring.";
     }
-        else if (!_item){
+        else if(_item){
+                } else {
             _description = "There is a lot within this room.";
-                }
+        }
     }
     
     protected void addCharacter(){

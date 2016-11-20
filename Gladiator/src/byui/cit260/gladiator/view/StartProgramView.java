@@ -42,7 +42,7 @@ public class StartProgramView extends View implements Serializable {
         + "each floor to be able to move onto the next floor. Each floor will\n"
         + "progressively get harder in diffuculty until you finally are able\n"
         + "to reach the top. There you will be given the opportunity to fight\n"
-        + "Julius Caeser himself. Beating the Ceaser will result in freedom \n"
+        + "Julius Caeser himself. Beating the Caeser will result in freedom \n"
         + "for you and your people as well as the winning the Game!\n"
         + "\nWelcome Warrior! What should we call you?");
     }
