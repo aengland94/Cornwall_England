@@ -9,7 +9,7 @@ import java.util.Random;
 
 /**
  *
- * @author Anthony
+ * @author Camdey
  */
 public class Control {
      public static int randInt(int min, int max) {
