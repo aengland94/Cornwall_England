@@ -17,7 +17,7 @@ public class Player extends Character implements Serializable{
     private int _maxHealth;
     private double _bestTime;
     private String[][] inventory = {{"WEAPON","[EMPTY]"},{"ARMOUR","[EMPTY]"},
-                                    {"KEY","[EMPTY]"}};
+                                    {"FLOOR-KEY","[EMPTY]"}};
 
     public Player() {
         _maxHealth = 5;
