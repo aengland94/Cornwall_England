@@ -69,7 +69,7 @@ public class Room implements Serializable{
             _description = "There is nothing in this room.";
         }
         else if(_person && _item && _weapon != null){
-            _description = "This room is full! There are people, items, and weapons in this room. Luck you!";
+            _description = "This room is full! There are people, items, and weapons in this room. Lucky you!";
         }
     }
     
