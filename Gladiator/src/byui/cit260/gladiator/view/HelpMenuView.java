@@ -53,8 +53,13 @@ public class HelpMenuView extends MenuView{
         return false;
     }
     private void displayInventory(){
-        Gladiator.getPlayer().getInventory();
-    }
+       String[][] satchel;
+        satchel = Gladiator.getPlayer().getInventory();
+        for (int i = 0; i < satchel.length; i++) {
+            System.out.println("/n" + satchel[i][0] + " : " + satchel[i][1]);
+            }
+        }
+            
     private void displayMap() {
 //        MapView map = new MapView();
 //        map.display();

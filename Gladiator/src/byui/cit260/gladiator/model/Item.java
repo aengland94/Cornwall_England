@@ -19,6 +19,7 @@ public class Item implements Serializable{
     
     public Item() {
         chooseName();
+
     }
     
     public String getDescription() { return _description; }
@@ -30,5 +31,8 @@ public class Item implements Serializable{
     
     protected void chooseName() {
         _name = "KEY";
+    }
+    protected void addDescription() {
+        _description = " + _modifier" + " " + _name;
     }
 }

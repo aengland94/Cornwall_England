@@ -17,10 +17,12 @@ public class Armour extends Item implements Serializable{
     public Armour() {
         chooseName();
         chooseModifier();
+        addDescription();
     }
     public Armour(String name, int modifier){
         _name = name;
         _modifier = modifier;
+        addDescription();
     }
     
     @Override
