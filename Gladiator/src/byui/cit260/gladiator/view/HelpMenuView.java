@@ -54,15 +54,16 @@ public class HelpMenuView extends MenuView{
     }
     private void displayInventory(){
        String[][] satchel;
-        satchel = Gladiator.getPlayer().getInventory();
+        satchel = Gladiator.getPlayer().getInventory(); 
+        System.out.println("");
         for (int i = 0; i < satchel.length; i++) {
-            System.out.println("/n" + satchel[i][0] + " : " + satchel[i][1]);
+            System.out.println(satchel[i][0] + " : " + satchel[i][1]);
             }
         }
             
     private void displayMap() {
-//        MapView map = new MapView();
-//        map.display();
+        MapView map = new MapView();
+        map.display();
     }
     private void displayMain() {
         MainMenuView mainMenuView = new MainMenuView();
