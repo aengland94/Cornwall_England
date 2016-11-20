@@ -17,9 +17,8 @@ public class KeepPlayingView extends NoInputView{
     }
     
     @Override
-    protected boolean doAction(String string){
+    protected void nextView(){
         Gladiator.setCurrentRoomNum(0);
         Gladiator.setCurrentRoom(Gladiator.getCurrentGame().getFandR()[Gladiator.getCurrentFloor()][0]);
-        return true;
     }
 }

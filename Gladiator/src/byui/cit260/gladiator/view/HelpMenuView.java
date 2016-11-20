@@ -56,8 +56,8 @@ public class HelpMenuView extends MenuView{
         Gladiator.getPlayer().getInventory();
     }
     private void displayMap() {
-        MapView map = new MapView();
-        map.display();
+//        MapView map = new MapView();
+//        map.display();
     }
     private void displayMain() {
         MainMenuView mainMenuView = new MainMenuView();

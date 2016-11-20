@@ -9,12 +9,13 @@ package byui.cit260.gladiator.view;
  *
  * @author Anthony
  */
-public class MapView extends View{
+public class MapView extends NoInputView{
     public MapView() {
-    
+    super("*** DISPLAY MAP ***");
     }
+    
     @Override
-    protected boolean doAction(String string){
-        return true;
+    protected void nextView() {
+        
     }
 }
