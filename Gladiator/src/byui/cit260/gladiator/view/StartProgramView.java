@@ -8,7 +8,6 @@ package byui.cit260.gladiator.view;
 import byui.cit260.gladiator.control.GameControl;
 import byui.cit260.gladiator.model.Player;
 import java.io.Serializable;
-import java.util.Scanner;
 
 /**
  *

@@ -26,5 +26,5 @@ private String _message;
         System.out.println(string);
         return true;
     }
-    
+    protected abstract void nextView();
 }

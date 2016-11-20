@@ -35,6 +35,8 @@ public class FightView extends NoInputView{
         }
         nextView(health);
     }
+    @Override
+    protected void nextView() { }
     private void nextView(int health){
         if(health > 0){
             CharacterFightView fight = new CharacterFightView();

@@ -5,17 +5,26 @@
  */
 package byui.cit260.gladiator.view;
 
+import gladiator.Gladiator;
+
 /**
  *
  * @author Krissy
  */
-public class NextRoomView extends View{ //extends View
+public class NextRoomView extends NoInputView{ //extends View
     public NextRoomView(){
-        
+        super(Gladiator.getCurrentRoom().getDescription());
     }
     @Override
-    protected boolean doAction(String string){
-        return true;
+    protected void nextView(){
+        if(Gladiator.getCurrentRoom().isCorpse()){
+            SrchBodYNView search = new SrchBodYNView();
+            search.display();
+        }
+        else{
+            ActionMenuView menu = new ActionMenuView();
+            menu.display();
+        }
     }
 //description of the room.    
 }

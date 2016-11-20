@@ -5,8 +5,6 @@
  */
 package byui.cit260.gladiator.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Anthony
@@ -85,6 +83,7 @@ abstract class MenuView extends View {
                          + "\n=========================================================";
         return menu;
     }
+    @Override
     protected boolean doAction(String choice) {
         return true;
     }

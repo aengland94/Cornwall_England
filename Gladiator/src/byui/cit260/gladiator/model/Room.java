@@ -28,6 +28,7 @@ public class Room implements Serializable{
     protected Weapon _weapon = null;
     protected String _type = null;
     protected int _num = 0;
+    protected boolean corpse = false;
     
     
     public Room() {
@@ -40,6 +41,8 @@ public class Room implements Serializable{
         addCharacter();
     }
     
+    public boolean isCorpse(){ return corpse; }
+    public void setCorpse(boolean corpse) { this.corpse = corpse; }
     
     protected void addDescription() { 
         _num = Control.randInt(1, 2);

@@ -13,4 +13,7 @@ public class SrchBodView extends NoInputView {
     public SrchBodView () {
     super ("You rumage through the remains");
     }
+    protected void nextView(){
+        
+    }
 }
