@@ -35,7 +35,8 @@ public class GameControl implements Serializable{
     private static void createFirstRoom() {
         Room room = new Room();
         
-        room.setDescription("\n*** PUT FIRST ROOM DESCRIPTION HERE ***");
+        room.setDescription("\n*** You walk into the room and notice that it is a large and open room."
+                + "This walls are made of large sand color bricks with some moss growing in the cracks. ***");
         
         Gladiator.setCurrentRoom(room);
         Gladiator.getCurrentGame().setFandR(room);

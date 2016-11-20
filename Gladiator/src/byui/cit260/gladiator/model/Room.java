@@ -46,9 +46,16 @@ public class Room implements Serializable{
     
     protected void addDescription() { 
         _num = Control.randInt(1, 2);
-        if(!_person && !_item){
-            _description = "This room is rather boring and has nothing of interest.";
+        if(!_person){
+            _description = "This room is rather boring and has nothing of interest."
+                    + "This room is another large and open room with some large sand color bricks and moss growing in the cracks.";
         }
+        else if (_person){
+            _description = "There is a person in this room, other than that; it's pretty boring.";
+    }
+        else if (!_item){
+            _description = "There is a lot within this room.";
+                }
     }
     
     protected void addCharacter(){
