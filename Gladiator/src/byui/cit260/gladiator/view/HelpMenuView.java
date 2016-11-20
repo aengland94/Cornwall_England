@@ -62,8 +62,8 @@ public class HelpMenuView extends MenuView{
         }
             
     private void displayMap() {
-//        MapView map = new MapView();
-//        map.display();
+        MapView map = new MapView();
+        map.display();
     }
     private void displayMain() {
         MainMenuView mainMenuView = new MainMenuView();
