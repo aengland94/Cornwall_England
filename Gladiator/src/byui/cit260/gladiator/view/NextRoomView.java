@@ -5,13 +5,15 @@
  */
 package byui.cit260.gladiator.view;
 
+import gladiator.Gladiator;
+
 /**
  *
  * @author Krissy
  */
-public class NextRoomView extends View{ //extends View
+public class NextRoomView extends NoInputView{ //extends View
     public NextRoomView(){
-        
+        super(Gladiator.getCurrentRoom().getDescription());
     }
     @Override
     protected boolean doAction(String string){
