@@ -75,8 +75,8 @@ public class HelpMenuView extends MenuView{
         actionMenuView.display();
     }
     private void displayStats() {
-        Player player = Gladiator.getPlayer();
-        player.displayStats();
+        StatsMenuView stats = new StatsMenuView();
+        stats.display();
     }
     private void displayPlay() {
         System.out.println("\n*** displayPlay() has been called ***");
