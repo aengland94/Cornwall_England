@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.view;
 
+import byui.cit260.gladiator.control.GameControl;
 import byui.cit260.gladiator.model.Player;
 import gladiator.Gladiator;
 
@@ -17,7 +18,8 @@ public class StatsMenuView extends MenuView{
         super("STATS","BASICS - (displays basic stats like health and room)",
               "KILLS - (displays the number of your kills)",
               "DEATHS - (displays the number of your deaths)",
-              "ROOMS - (displays the number of rooms visited)","HELP - (displays help menu)");
+              "ROOMS - (displays the number of rooms visited)",
+              "HELP - (displays help menu)");
     }
     
     @Override
@@ -58,7 +60,8 @@ public class StatsMenuView extends MenuView{
         
     }
     private void displayDeaths(){
-        
+        int deaths = GameControl.deaths();
+        System.out.println("You have died " + deaths + " time(s)");
     }
     private void displayRooms(){
         
