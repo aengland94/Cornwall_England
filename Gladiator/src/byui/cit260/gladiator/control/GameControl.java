@@ -227,7 +227,7 @@ public class GameControl implements Serializable{
     
     } 
     
-    public int roomsVisited(){
+    public static int roomsVisited(){
         Room[][] a = Gladiator.getCurrentGame().getFandR();
         int result = 0;
         for (Room[] row : a) {

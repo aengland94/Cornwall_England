@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.view;
 
+import byui.cit260.gladiator.control.GameControl;
 import byui.cit260.gladiator.model.Player;
 import gladiator.Gladiator;
 
@@ -61,6 +62,8 @@ public class StatsMenuView extends MenuView{
         
     }
     private void displayRooms(){
+        int _z = GameControl.roomsVisited();
+        System.out.println("\nRooms Visited: ");
         
     }
     private void displayHelp(){
