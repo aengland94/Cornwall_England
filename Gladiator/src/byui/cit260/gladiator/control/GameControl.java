@@ -26,12 +26,6 @@ import java.io.Serializable;
  * @author Anthony
  */
 public class GameControl implements Serializable{
-
-    
-    public GameControl() {
-        this._z = 0;
-        
-    }
     
     private static void createFirstRoom() {
         Room room = new Room();
