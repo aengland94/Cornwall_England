@@ -56,8 +56,8 @@ public class HelpMenuView extends MenuView{
         Gladiator.getPlayer().getInventory();
     }
     private void displayMap() {
-//        MapView map = new MapView();
-//        map.display();
+        MapView map = new MapView();
+        map.display();
     }
     private void displayMain() {
         MainMenuView mainMenuView = new MainMenuView();
@@ -68,8 +68,8 @@ public class HelpMenuView extends MenuView{
         actionMenuView.display();
     }
     private void displayStats() {
-        Player player = Gladiator.getPlayer();
-        player.displayStats();
+        StatsMenuView stats = new StatsMenuView();
+        stats.display();
     }
     private void displayPlay() {
         System.out.println("\n*** displayPlay() has been called ***");

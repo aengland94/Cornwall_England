@@ -70,7 +70,6 @@ public class MainMenuView extends MenuView{
         save.display();
     }
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu() function called ***");
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
     }
