@@ -29,6 +29,7 @@ public class Room implements Serializable{
     protected String _type = null;
     protected int _num = 0;
     protected boolean corpse = false;
+    protected int _death = 0;
     
     
     public Room() {
@@ -179,6 +180,7 @@ public class Room implements Serializable{
         return Objects.equals(this._description, other._description);
     }
     
-    
+    public void setDeath(int deaths) {_death = deaths; }
+    public int getDeaths() { return _death;}    
     
 }
