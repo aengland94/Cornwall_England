@@ -116,10 +116,12 @@ public class Weapon extends Item implements Serializable{
     public Weapon() {
         chooseName();
         chooseModifier();
+         addDescription();
     }
     
     public Weapon(String name, int modifier){
         _name = name;
         _modifier = modifier;
+        addDescription();
     }
 }

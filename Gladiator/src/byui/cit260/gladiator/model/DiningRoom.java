@@ -31,5 +31,8 @@ public class DiningRoom extends Room implements Serializable{
         if(!_person && !_item){
             _description = "This room has a wooden table that is covered in moldy food.";
         }
+        else if (_item){
+            _description = "There is some food in the room that you could use to regenerate your health.";
+        }
     }
 }

@@ -15,19 +15,36 @@ import java.io.Serializable;
  */
 public class StartProgramView extends View implements Serializable {
     public StartProgramView() {
-        super("WELCOME TO GLADIATOR!\n"
-        + "This is a game where you will be fighting your way through\n"
-        + "a collecium to overthrow the current Caeser of Rome to free\n"
-        + "yourself and your people from the bondage you are in as a\n"
-        + "Roman Gladiator.\n\n"
+        super("************************************************************************************************\n"
+            + "************************************************************************************************\n"
+            + "***                                                                                          ***\n"
+            + "**      ######   ##          ###    ########  ####    ###    ########  #######  ########      **\n"
+            + "**     ##    ##  ##         ## ##   ##     ##  ##    ## ##      ##    ##     ## ##     ##     **\n"
+            + "**     ##        ##        ##   ##  ##     ##  ##   ##   ##     ##    ##     ## ##     ##     **\n"
+            + "**     ##   #### ##       ##     ## ##     ##  ##  ##     ##    ##    ##     ## ########      **\n"
+            + "**     ##    ##  ##       ######### ##     ##  ##  #########    ##    ##     ## ##   ##       **\n"
+            + "**     ##    ##  ##       ##     ## ##     ##  ##  ##     ##    ##    ##     ## ##    ##      **\n"
+            + "**      ######   ######## ##     ## ########  #### ##     ##    ##     #######  ##     ##     **\n"
+            + "***                                                                                          ***\n"
+            + "************************************************************************************************\n"
+            + "************************************************************************************************\n\n"
+                
+        + "WELCOME TO GLADIATOR!\n"
+        + "This is a game where you will be fighting your way through the\n"
+        + "Coliseum to overthrow the current Caeser of Rome to free you\n"
+        + "and your people from the bondage you are in as a Roman Gladiator.\n\n"
+        + "During The Conquest of Rome, the Romans invaded your homeland. \n"
+        + "While they were invading, they captured people from every \n"
+        + "country they conquered and placed them in the Coliseum to fight \n"
+        + "to the death for their own personal enjoyment. \n\n"   
         + "You will start at the bottom of the Coliseum. You will have\n"
         + "to search rooms, fight Bosses, and complete different objectives\n"
         + "each floor to be able to move onto the next floor. Each floor will\n"
         + "progressively get harder in diffuculty until you finally are able\n"
-        + "to reach the top. There you will be given the oppertunity to fight\n"
-        + "Ceaser himself. Beating Ceaser will result in freedom for you and\n"
-        + "your people as well as the winning of the Game!\n"
-        + "\nWelcome Warrior! What should we call you?");
+        + "to reach the top. There you will be given the opportunity to fight\n"
+        + "Julius Caeser himself. Beating the Caeser will result in freedom \n"
+        + "for you and your people as well as the winning the Game!\n"
+        + "\nWelcome Gladiator! Before we begin, what is your title?");
     }
     
     @Override

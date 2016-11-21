@@ -29,6 +29,7 @@ public class Room implements Serializable{
     protected String _type = null;
     protected int _num = 0;
     protected boolean corpse = false;
+    protected int _death = 0;
     
     
     public Room() {
@@ -46,8 +47,30 @@ public class Room implements Serializable{
     
     protected void addDescription() { 
         _num = Control.randInt(1, 2);
-        if(!_person && !_item){
-            _description = "This room is rather boring and has nothing of interest.";
+        if(!_person){
+            _description = "This room is rather boring and has nothing of interest."
+                    + "This room is another large and open room with some large sand color bricks and moss growing in the cracks.";
+        }
+        else if (_person){
+            _description = "There is a person in this room, other than that; it's pretty boring.";
+        }
+        else if(_weapon == null){
+            _description = "There are no weapons in this room.";
+        }        
+        else if(_weapon != null){
+            _description = "There is a weapon in this room.";
+        }
+        else if(_item){
+            _description = "There is an item in this room";
+        }
+        else if(!_item){
+            _description = "There are no items in this room";
+        }
+        else if(!_person && !_item && _weapon == null){
+            _description = "There is nothing in this room.";
+        }
+        else if(_person && _item && _weapon != null){
+            _description = "This room is full! There are people, items, and weapons in this room. Lucky you!";
         }
     }
     
@@ -157,6 +180,7 @@ public class Room implements Serializable{
         return Objects.equals(this._description, other._description);
     }
     
-    
+    public void setDeath(int deaths) {_death = deaths; }
+    public int getDeaths() { return _death;}    
     
 }

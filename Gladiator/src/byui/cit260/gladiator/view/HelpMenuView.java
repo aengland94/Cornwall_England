@@ -14,7 +14,8 @@ import gladiator.Gladiator;
  */
 public class HelpMenuView extends MenuView{
     public HelpMenuView() {
-        super("HELP", "MAIN - (displays the main menu)", "ACTION - (displays the action menu)",
+        super("HELP", "MAIN - (displays the main menu)", "ACTION - (displays the action menu)", 
+                "INVENTORY - (displays your inventory)",
                 "STATS - (displays stats like health and room)", "MAP - (displays the floors map)",
                 "ROOM - (displays the current room you are in)");
     }
@@ -53,8 +54,14 @@ public class HelpMenuView extends MenuView{
         return false;
     }
     private void displayInventory(){
-        Gladiator.getPlayer().getInventory();
-    }
+       String[][] satchel;
+        satchel = Gladiator.getPlayer().getInventory(); 
+        System.out.println("");
+        for (int i = 0; i < satchel.length; i++) {
+            System.out.println(satchel[i][0] + " : " + satchel[i][1]);
+            }
+        }
+            
     private void displayMap() {
         MapView map = new MapView();
         map.display();

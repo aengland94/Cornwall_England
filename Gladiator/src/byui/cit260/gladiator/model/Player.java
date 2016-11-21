@@ -17,7 +17,7 @@ public class Player extends Character implements Serializable{
     private int _maxHealth;
     private double _bestTime;
     private String[][] inventory = {{"WEAPON","[EMPTY]"},{"ARMOUR","[EMPTY]"},
-                                    {"KEY","[EMPTY]"}};
+                                    {"FLOOR-KEY","[EMPTY]"}};
 
     public Player() {
         _maxHealth = 5;
@@ -55,7 +55,7 @@ public class Player extends Character implements Serializable{
             p4 = "\nYou have some muscle but it isn't very toned ";
         }
         else{
-            p4 = "\nYou have very toned muscle ";
+            p4 = "\nYou have very toned and chiseled muscles ";
         }
         
         if(_strength < 6){
