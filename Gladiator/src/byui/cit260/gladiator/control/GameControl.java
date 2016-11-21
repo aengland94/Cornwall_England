@@ -29,6 +29,7 @@ public class GameControl implements Serializable{
 
     
     public GameControl() {
+        this._z = 0;
         
     }
     
@@ -220,4 +221,8 @@ public class GameControl implements Serializable{
     public static void saveGame(int slot) {
         System.out.println("\n*** saveGame stub function called ***");
     }
+    
+    public int roomCounter(){
+        return 8;}
+    
 }

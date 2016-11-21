@@ -41,5 +41,9 @@ public class Gladiator {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.display();
     }
+
+    public static Room getRoomsVisited() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
