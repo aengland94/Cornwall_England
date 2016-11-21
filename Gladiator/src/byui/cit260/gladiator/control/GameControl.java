@@ -216,7 +216,26 @@ public class GameControl implements Serializable{
         System.out.println("\n*** saveGame stub function called ***");
     }
     
-    public int roomCounter(){
-        return 8;}
+    public int deaths() {
+        Room[][] a = Gladiator.getCurrentGame().getFandR();
+        int result = 0;
+        for (Room[] row : a) {
+        for (Room i : row)
+            result += i.getDeaths();
+        }
+        return result;
+    
+    } 
+    
+    public int roomsVisited(){
+        Room[][] a = Gladiator.getCurrentGame().getFandR();
+        int result = 0;
+        for (Room[] row : a) {
+        for (Room i : row)
+            if (i != null)
+            result++;
+        }
+        return result;
+    }
     
 }
