@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.view;
 
+import byui.cit260.gladiator.control.GameControl;
 import byui.cit260.gladiator.model.Player;
 import gladiator.Gladiator;
 
@@ -28,18 +29,22 @@ public class StatsMenuView extends MenuView{
             case "B":
             case "BASICS":
                 displayBasics();
+                nextView();
                 break;
             case "K":
             case "KILLS":
                 displayKills();
+                nextView();
                 break;
             case "D":
             case "DEATHS":
                 displayDeaths();
+                nextView();
                 break;
             case "R":
             case "ROOM":
                 displayRooms();
+                nextView();
                 break;
             case "H":
             case "Help":
@@ -55,7 +60,8 @@ public class StatsMenuView extends MenuView{
         player.displayStats();
     }
     private void displayKills(){
-        
+        int kills = GameControl.kills();
+        System.out.println("You have succesfully killed someone " + kills + " time(s)");
     }
     private void displayDeaths(){
         
@@ -66,5 +72,9 @@ public class StatsMenuView extends MenuView{
     private void displayHelp(){
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
+    }
+    private void nextView(){
+        GTRoomView room = new GTRoomView();
+        room.display();
     }
 }

@@ -221,15 +221,42 @@ public class GameControl implements Serializable{
         System.out.println("\n*** saveGame stub function called ***");
     }
     
-    public int deaths() {
+    public static int deaths() {
         Room[][] a = Gladiator.getCurrentGame().getFandR();
         int result = 0;
         for (Room[] row : a) {
         for (Room i : row)
-            result += i.getDeaths();
+            if(i != null)
+                result += i.getDeaths();
         }
         return result;
-    
     } 
     
+    public static int kills(){
+        Room[][] a = Gladiator.getCurrentGame().getFandR();
+        int result = 0;
+        for (Room[] row : a) {
+        for (Room i : row)
+            if(i != null)
+                if(i.isCorpse())
+                    result++;
+        }
+        return result;
+    }
+    
+    public static String gameSlots(){
+        Game[] games = Gladiator.getGames();
+        String g1 = "[EMPTY]";
+        String g2 = "[EMPTY]";
+        String g3 = "[EMPTY]";
+        String[] slots = {g1,g2,g3};
+        for(int i = 0;i < games.length;i++){
+            if(games[i] != null){
+                slots[i] = games[i].getName();
+            }
+        }
+        String display = "\n 1 : " + g1 + "\n 2 : " + g2 + "\n 3 : " + g3;
+        
+        return display;
+    }
 }
