@@ -216,7 +216,7 @@ public class GameControl implements Serializable{
         System.out.println("\n*** saveGame stub function called ***");
     }
     
-    public int deaths() {
+    public static int deaths() {
         Room[][] a = Gladiator.getCurrentGame().getFandR();
         int result = 0;
         for (Room[] row : a) {
