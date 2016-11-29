@@ -64,7 +64,7 @@ public class ActionMenuView extends MenuView{
         System.out.println("\n*** displayTalk() has been called ***");
     }
     private void displayFight() {
-        System.out.println("\n*** displayFight() has been called ***");
+        
         FightView fight = new FightView();
         fight.display();
     }

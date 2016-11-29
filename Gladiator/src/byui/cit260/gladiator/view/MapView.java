@@ -91,7 +91,7 @@ public class MapView extends View{
         for(int i = 0;i < map.length;i++){
             if(map[i] != null){
                 rooms[i] = map[i].getType();
-                if(floor == Gladiator.getCurrentFloor()){
+                if(floor == 1 + Gladiator.getCurrentFloor()){
                     if(Gladiator.getCurrentRoomNum() == map[i].getX()){
                         rooms[i] = "X";
                     }

@@ -18,7 +18,7 @@ public class FightView extends NoInputView{
        super("\nYou decide to fight");
     }
     private void displayFight() {
-        
+        System.out.println("\n*** displayFight() has been called ***");
         int health;
         int mod =  
                 PlayerControl.fight(Gladiator.getPlayer().getAttack(), 
@@ -61,8 +61,8 @@ public class FightView extends NoInputView{
             System.out.println("\nYou charge foreward ready for the fight with your fists clenched."
                              + "\nYou can fill the adrenaline pumping through your vains as your " 
                              + "\nknucles turn white. Your head pounds, and you start to break a " 
-                             + "sweat. Suddenly your body relaxes a bit as you realize you are the " 
-                             + "one in the room. You feel your face turn a bright red.");
+                             + "\nsweat. Suddenly your body relaxes a bit as you realize you are " 
+                             + "\nthe one in the room. You feel your face turn a bright red.");
         }
         else {
             displayFight();
@@ -72,8 +72,8 @@ public class FightView extends NoInputView{
             System.out.println("\nYou charge foreward ready for the fight with your fists clenched."
                              + "\nYou can fill the adrenaline pumping through your vains as your " 
                              + "\nknucles turn white. Your head pounds, and you start to break a " 
-                             + "sweat. Suddenly your body relaxes a bit as you realize you are the " 
-                             + "one in the room. You feel your face turn a bright red.");
+                             + "\nsweat. Suddenly your body relaxes a bit as you realize you are " 
+                             + "\nthe one in the room. You feel your face turn a bright red.");
         }
         return true;
     }
