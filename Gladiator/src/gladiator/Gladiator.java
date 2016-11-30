@@ -22,6 +22,7 @@ public class Gladiator {
     private static int _currentFloor = 0;
     
     public static Game[] getGames() { return _games; }
+    public static void setGames(int slot) {_games[slot] = _currentGame; }
     public static int getCurrentRoomNum() { return _currentRoomNum; }
     public static void setCurrentRoomNum(int num) { _currentRoomNum = num; }
     public static int getCurrentFloor() { return _currentFloor; }

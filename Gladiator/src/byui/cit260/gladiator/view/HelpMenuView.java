@@ -6,6 +6,7 @@
 package byui.cit260.gladiator.view;
 
 import byui.cit260.gladiator.model.Player;
+import byui.cit260.gladiator.model.Room;
 import gladiator.Gladiator;
 
 /**
@@ -63,6 +64,7 @@ public class HelpMenuView extends MenuView{
         }
             
     private void displayMap() {
+        
         MapView map = new MapView();
         map.display();
     }
@@ -71,14 +73,27 @@ public class HelpMenuView extends MenuView{
         mainMenuView.display();
     }
     private void displayAction() {
-        ActionMenuView actionMenuView = new ActionMenuView();
-        actionMenuView.display();
+        Room room = Gladiator.getCurrentRoom();
+        if(room == null){
+            System.out.println("\n*** ERROR ** You must start a game first ***");
+        }
+        else{
+            ActionMenuView actionMenuView = new ActionMenuView();
+            actionMenuView.display();
+        }
     }
     private void displayStats() {
+        
         StatsMenuView stats = new StatsMenuView();
         stats.display();
     }
     private void displayPlay() {
-        System.out.println("\n*** displayPlay() has been called ***");
+        Room room = Gladiator.getCurrentRoom();
+        if(room == null){
+            System.out.println("\n*** ERROR ** You must start a game first ***");
+        }
+        else{
+            System.out.println("\n*** displayPlay() has been called ***");
+        }
     }
 }

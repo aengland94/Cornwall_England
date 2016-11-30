@@ -31,7 +31,9 @@ public class GameControl implements Serializable{
         Room room = new Room();
         
         room.setDescription("\n*** You walk into the room and notice that it is a large and open room."
-                + "This walls are made of large sand color bricks with some moss growing in the cracks. ***");
+                          + "\nThis walls are made of large sand color bricks with some moss growing "
+                          + "\nin the cracks. ***");
+        room.setPerson(false);
         
         Gladiator.setCurrentRoom(room);
         Gladiator.getCurrentGame().setFandR(room);
@@ -221,21 +223,48 @@ public class GameControl implements Serializable{
         int result = 0;
         for (Room[] row : a) {
         for (Room i : row)
-            result += i.getDeaths();
+            if(i != null)
+                result += i.getDeaths();
         }
         return result;
-    
     } 
     
-    public static int roomsVisited(){
+    public static int kills(){
         Room[][] a = Gladiator.getCurrentGame().getFandR();
         int result = 0;
         for (Room[] row : a) {
         for (Room i : row)
-            if (i != null)
-            result++;
+            if(i != null)
+                if(i.isCorpse())
+                    result++;
         }
         return result;
     }
     
+    public static String gameSlots(){
+        Game[] games = Gladiator.getGames();
+        String g1 = "[EMPTY]";
+        String g2 = "[EMPTY]";
+        String g3 = "[EMPTY]";
+        String[] slots = {g1,g2,g3};
+        for(int i = 0;i < games.length;i++){
+            if(games[i] != null){
+                slots[i] = games[i].getName();
+            }
+        }
+        String display = "\n 1 : " + g1 + "\n 2 : " + g2 + "\n 3 : " + g3;
+        
+        return display;
+    }
+    
+    public static int roomsVisited(){
+        Room[][] a = Gladiator.getCurrentGame().getFandR();
+        int result = 0;
+        for (Room[] row : a){
+        for (Room i : row)
+            if (i != null)
+                result++;
+        }
+        return result;
+    }
 }

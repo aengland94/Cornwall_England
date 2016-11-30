@@ -60,6 +60,8 @@ public class MainMenuView extends MenuView{
     }
     private void startNewGame() {
         GameControl.createNewGame(Gladiator.getPlayer());
+        ActionMenuView actionMenuView = new ActionMenuView();
+        actionMenuView.display();
     }
     private void loadExistingGame() {
         System.out.println("*** loadExistingGame() function called ***");

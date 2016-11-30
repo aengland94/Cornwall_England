@@ -13,36 +13,27 @@ import java.util.Scanner;
  */
 public class GTRoomView extends View{
     GTRoomView(){
-        
+        super("Hit enter to go to the current room");
     }
     @Override
     protected boolean doAction(String string){
+        NextRoomView next = new NextRoomView();
+        next.display();
         return true;
     }
     
     @Override
     protected String getInput(){
         Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
         String value = null;
-        
-        // while a valid name has not be retrieved
-        while (!valid) {
+
+        //prompt for the player's name
+        System.out.println("\n" + this.displayMessage);
+
+        //get the value entered from the keyboard
+        value = keyboard.nextLine();
+        value = value.trim();
             
-            //prompt for the player's name
-            System.out.println("\n" + this.displayMessage);
-            
-            //get the value entered from the keyboard
-            value = keyboard.nextLine();
-            value = value.trim();
-            
-            if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** INVALID!!! ** Please enter a command! ***");
-            }
-            else{
-                valid = true;
-            }
-        }
         return value; //return the name
     }
 }
