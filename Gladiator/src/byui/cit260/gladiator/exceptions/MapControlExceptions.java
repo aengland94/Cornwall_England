@@ -9,24 +9,24 @@ package byui.cit260.gladiator.exceptions;
  *
  * @author Krissy
  */
-public class NameException extends Exception{
+public class MapControlExceptions extends Exception {
 
-    public NameException() {
+    public MapControlExceptions() {
     }
 
-    public NameException(String message) {
+    public MapControlExceptions(String message) {
         super(message);
     }
 
-    public NameException(String message, Throwable cause) {
+    public MapControlExceptions(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public NameException(Throwable cause) {
+    public MapControlExceptions(Throwable cause) {
         super(cause);
     }
 
-    public NameException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public MapControlExceptions(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
     
