@@ -10,5 +10,24 @@ package byui.cit260.gladiator.exceptions;
  * @author Krissy
  */
 public class GameControlExceptions extends Exception {
+
+    public GameControlExceptions() {
+    }
+
+    public GameControlExceptions(String message) {
+        super(message);
+    }
+
+    public GameControlExceptions(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public GameControlExceptions(Throwable cause) {
+        super(cause);
+    }
+
+    public GameControlExceptions(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
     
 }
