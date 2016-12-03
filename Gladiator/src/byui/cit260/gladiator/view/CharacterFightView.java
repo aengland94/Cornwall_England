@@ -6,7 +6,10 @@
 package byui.cit260.gladiator.view;
 
 import byui.cit260.gladiator.control.CharacterControl;
+import byui.cit260.gladiator.exceptions.PlayerControlExceptions;
 import gladiator.Gladiator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,7 +20,7 @@ public class CharacterFightView extends NoInputView {
         super("\nThey decide to fight");
     }
     
-    private void displayFight() {
+    private void displayFight() throws PlayerControlExceptions {
         
         int health;
         int mod =  
@@ -53,7 +56,11 @@ public class CharacterFightView extends NoInputView {
     @Override
     protected boolean doAction(String string) {
         System.out.println(string);
-        displayFight();
+        try {
+            displayFight();
+        } catch (PlayerControlExceptions ex) {
+            Logger.getLogger(CharacterFightView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return true;
     }
     

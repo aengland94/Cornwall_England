@@ -7,6 +7,7 @@ package byui.cit260.gladiator.model;
 
 import byui.cit260.gladiator.control.Control;
 import byui.cit260.gladiator.control.PlayerControl;
+import java.awt.Point;
 import java.io.Serializable;
 
 /**
@@ -14,6 +15,10 @@ import java.io.Serializable;
  * @author Anthony
  */
 public class Player extends Character implements Serializable{
+
+    public static Player[] values() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     private int _maxHealth;
     private double _bestTime;
     private String[][] inventory = {{"WEAPON","[EMPTY]"},{"ARMOUR","[EMPTY]"},
@@ -133,6 +138,10 @@ public class Player extends Character implements Serializable{
     @Override
     public String toString() {
         return "Player{" + "_name=" + _name +", _maxHealth=" + _maxHealth + ", _bestTime=" + _bestTime + '}';
+    }
+
+    public Point getCoordinates() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

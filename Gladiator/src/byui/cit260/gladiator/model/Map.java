@@ -56,6 +56,13 @@ public class Map implements Serializable {
         }
         return true;
     }
+
+    public int getNoOfColumns() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getNoOfRows() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
-    
-}
+    }

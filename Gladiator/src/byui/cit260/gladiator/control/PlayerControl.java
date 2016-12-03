@@ -15,21 +15,7 @@ import java.io.Serializable;
  * @author Camdey
  */
 public class PlayerControl extends CharacterControl implements Serializable{
-    private int x;
-    public int go(int move, Player player, Map map) { 
-        if(move == 1){
-            if(player.getX() == 4){
-                player.setX(0);}
-            else {
-                player.setX(player.getX() + 1);}}
-        else if(move == -1){
-            if(player.getX() == 0){
-                player.setX(4);}
-            else {
-                player.setX(player.getX() - 1);}}
-        else{
-        System.out.println("Invalid Move");}
-        return x; }
+
     
     
     
@@ -75,5 +61,9 @@ public class PlayerControl extends CharacterControl implements Serializable{
         if (power < 0){
             power = 0;
         }
-        return power; }
+        return power; 
+    }
+    
 }
+    
+    

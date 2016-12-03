@@ -38,4 +38,8 @@ public class Game implements Serializable{
     public void setFandR(Room fandR){
         _fandR[Gladiator.getCurrentFloor()][Gladiator.getCurrentRoomNum()] = fandR;
     }
+
+    public Map getMap() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
