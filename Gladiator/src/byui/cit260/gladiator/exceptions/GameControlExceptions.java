@@ -9,6 +9,6 @@ package byui.cit260.gladiator.exceptions;
  *
  * @author Krissy
  */
-public class InvalidCommandException extends Exception {
+public class GameControlExceptions extends Exception {
     
 }
