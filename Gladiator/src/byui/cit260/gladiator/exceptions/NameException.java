@@ -7,8 +7,11 @@ package byui.cit260.gladiator.exceptions;
 
 /**
  *
- * @author Krissy
+ * @author Camdey
  */
 public class NameException {
+
+
+  
     
 }
