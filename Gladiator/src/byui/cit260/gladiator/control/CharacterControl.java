@@ -5,6 +5,7 @@
  */
 package byui.cit260.gladiator.control;
 
+import byui.cit260.gladiator.exceptions.PlayerControlExceptions;
 import gladiator.Gladiator;
 
 /**
@@ -20,22 +21,18 @@ public class CharacterControl {
         return health;
     }
     
-    public static int fight(int attackerStats, int weapon, int defenderStats, int armour) { 
+    public static int fight(int attackerStats, int weapon, int defenderStats, int armour) throws PlayerControlExceptions { 
         if(attackerStats < 1){
-            System.out.println("Error! Attacker Stats are too low");
-            return 0;
+            throw new PlayerControlExceptions("Error! Attacker Stats are too low");
         }
         if(weapon < 0){
-            System.out.println("Error! Weapon cannot be negative");
-            return 0;
+            throw new PlayerControlExceptions("Error! Weapon cannot be negative");
         }
         if(defenderStats < 0){
-            System.out.println("Error! Defender Stats cannot be negative");
-            return 0;
+            throw new PlayerControlExceptions("Error! Defender Stats cannot be negative");
         }
         if(armour < 0){
-            System.out.println("Error! Armour cannot be negative");
-            return 0;
+            throw new PlayerControlExceptions("Error! Armour cannot be negative");
         }
         int lostHealth = (defenderStats + armour) - (attackerStats + weapon);
         if(lostHealth < 0){
