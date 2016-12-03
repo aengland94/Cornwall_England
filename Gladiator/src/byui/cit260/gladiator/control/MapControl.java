@@ -5,17 +5,36 @@
  */
 package byui.cit260.gladiator.control;
 
+
 import byui.cit260.gladiator.exceptions.MapControlExceptions;
 import byui.cit260.gladiator.model.Map;
 import byui.cit260.gladiator.model.Player;
 import gladiator.Gladiator;
 import java.awt.Point;
+import byui.cit260.gladiator.model.Map;
+import byui.cit260.gladiator.model.Player;
+
 
 /**
  *
  * @author Krissy
  */
 public class MapControl {
+    public int go(int move, Player player, Map map) { 
+        int x = 0;
+        if(move == 1){
+            if(player.getX() == 4){
+                player.setX(0);}
+            else {
+                player.setX(player.getX() + 1);}}
+        else if(move == -1){
+            if(player.getX() == 0){
+                player.setX(4);}
+            else {
+                player.setX(player.getX() - 1);}}
+        else{
+        System.out.println("Invalid Move");}
+        return x; }
     
     public static int movePlayerToLocation(Player player, Point coordinates) 
             throws MapControlExceptions{

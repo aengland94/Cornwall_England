@@ -6,6 +6,7 @@
 package byui.cit260.gladiator.model;
 
 import byui.cit260.gladiator.control.PlayerControl;
+import byui.cit260.gladiator.exceptions.PlayerControlExceptions;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,7 +43,7 @@ public class PlayerControlTest {
      * Test of fight method, of class PlayerControl.
      */
     @Test
-    public void testFight() {
+    public void testFight() throws PlayerControlExceptions {
         System.out.println("fight1");
         int attackerStats = 5;
         int weapon = 3;

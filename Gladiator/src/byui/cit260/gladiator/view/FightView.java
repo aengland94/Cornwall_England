@@ -6,8 +6,11 @@
 package byui.cit260.gladiator.view;
 
 import byui.cit260.gladiator.control.PlayerControl;
+import byui.cit260.gladiator.exceptions.PlayerControlExceptions;
 import byui.cit260.gladiator.model.Room;
 import gladiator.Gladiator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,7 +20,7 @@ public class FightView extends NoInputView{
     public FightView() {
        super("\nYou decide to fight");
     }
-    private void displayFight() {
+    private void displayFight() throws PlayerControlExceptions {
         System.out.println("\n*** displayFight() has been called ***");
         int health;
         int mod =  
@@ -65,7 +68,11 @@ public class FightView extends NoInputView{
                              + "\nthe one in the room. You feel your face turn a bright red.");
         }
         else {
-            displayFight();
+            try {
+                displayFight();
+            } catch (PlayerControlExceptions ex) {
+                Logger.getLogger(FightView.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         }
         else {
