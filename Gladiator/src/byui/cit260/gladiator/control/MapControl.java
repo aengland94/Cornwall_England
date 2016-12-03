@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.gladiator.exceptions;
+package byui.cit260.gladiator.control;
 
 /**
  *
- * @author Krissy
+ * @author Anthony
  */
-public class NameException {
+public class MapControl {
     
 }
